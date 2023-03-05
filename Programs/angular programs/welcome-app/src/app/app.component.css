@@ -1,0 +1,19 @@
+div{
+    display: inline;
+    width: 50%;
+}
+
+#a{
+    width: 50%;
+    border: 1px red solid;
+    height: 600px;
+    padding: 300px;
+    background-color:green;
+}
+#b{
+    width: 50%;
+    border: 1px red solid;
+    height: 600px;
+    padding: 300px;
+    background-color: blue;
+}
