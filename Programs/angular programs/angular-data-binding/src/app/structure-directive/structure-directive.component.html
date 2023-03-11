@@ -1,0 +1,29 @@
+<div>
+    <h2>Structure Directive</h2>
+    <!-- <p>Welcome to structure directive</p>
+    <p *ngIf="true">Welcome to structure directive with ngIf true</p>
+    <p *ngIf="false">Welcome to structure directive with ngIf false</p>
+    <p *ngIf="f1">Welcome to structure directive with ngIf true with f1</p>
+    <p *ngIf="f2">Welcome to structure directive with ngIf false with f2</p>
+    <hr/>
+    <input type="button" value="Click here" (click)="fun()"/><br/>
+    <div *ngIf="f3">
+        <h2>Welcome to Structure directive</h2>
+    </div>
+    <hr/>
+    <input type="button" [value]="b1" (click)="toggle()"/>
+    <div  *ngIf="flag">
+        <img src="https://media.istockphoto.com/id/1146517111/photo/taj-mahal-mausoleum-in-agra.jpg?s=612x612&w=0&k=20&c=vcIjhwUrNyjoKbGbAQ5sOcEzDUgOfCsm9ySmJ8gNeRk="/>
+    </div> -->
+    <hr/>
+    <h2>*ngFor</h2>
+    Names {{names}}
+    <h3>All names one by one</h3>
+    <div *ngFor="let name of names">
+            <p>{{name}}</p>
+    </div>
+    <h3>Name is Unorder list</h3>
+    <ul>
+        <li *ngFor="let name of names">{{name}}</li>
+    </ul>
+</div>
