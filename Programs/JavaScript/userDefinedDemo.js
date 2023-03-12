@@ -35,7 +35,7 @@ class Customer {
 }
 let cust1 = new Customer();
 cust1.display();
-document.write("id is "+cust1.cid)
+document.write("id is "+cust1.x
 
 
 

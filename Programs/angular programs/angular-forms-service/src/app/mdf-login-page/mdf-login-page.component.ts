@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
+import { MyService } from '../custom.service';
 @Component({
   selector: 'app-mdf-login-page',
   templateUrl: './mdf-login-page.component.html',
@@ -16,10 +17,16 @@ export class MdfLoginPageComponent {
   signIn(){
     let login = this.loginRef.value;
     //console.log(login);
-    if(login.email=="raj@gmail.com" && login.password=="123"){
-        this.msg="Successfully login"
+    // if(login.email=="raj@gmail.com" && login.password=="123"){
+    //     this.msg="Successfully login"
+    // }else {
+    //     this.msg="Failure try once again"
+    // }
+    let cs = new MyService();
+    if(cs.checkUser(login)){
+      this.msg="successfully login"
     }else {
-        this.msg="Failure try once again"
+      this.msg = "failure try once again"
     }
     this.loginRef.reset();
   }
