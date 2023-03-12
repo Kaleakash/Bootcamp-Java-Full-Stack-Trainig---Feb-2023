@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { MyService } from '../custom.service';
+import { LoginService } from '../login.service';
 @Component({
   selector: 'app-tdf-login-page',
   templateUrl: './tdf-login-page.component.html',
   styleUrls: ['./tdf-login-page.component.css']
 })
 export class TdfLoginPageComponent {
+
+  constructor(public ls:LoginService){}     // pull the object using DI concept. 
+
   msg:string="";
   signIn(loginRef:NgForm){
     let login = loginRef.value;
@@ -18,8 +22,14 @@ export class TdfLoginPageComponent {
     //    // alert("failure try once again");
     //    this.msg = "failure try once again"
     // }
-    let cs = new MyService();
-    if(cs.checkUser(login)){
+        // let cs = new MyService();
+    // if(cs.checkUser(login)){
+    //   this.msg="successfully login"
+    // }else {
+    //   this.msg = "failure try once again"
+    // }
+    
+    if(this.ls.checkUser(login)){
       this.msg="successfully login"
     }else {
       this.msg = "failure try once again"
