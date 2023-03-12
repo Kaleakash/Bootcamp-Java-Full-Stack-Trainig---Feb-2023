@@ -1,0 +1,21 @@
+<div>
+    <h2>Login page using template driven form</h2>
+    <form #loginRef = "ngForm" (ngSubmit)="signIn(loginRef)">
+        <label>EmailId</label>
+<input type="email" name="email" ngModel required  pattern="[a-z,0-9]+@[a-z,0-9]+.com"/>
+        <div *ngIf="loginRef.controls['email']?.invalid && loginRef.controls['email']?.touched">
+        <span [hidden]="!loginRef.controls['email']?.hasError('required')" style="color:red">EmailId is required</span>
+        <span [hidden]="!loginRef.controls['email']?.hasError('pattern')" style="color:red">Emailid must follow pattern</span>
+        </div><br/>
+        <label>Password</label>
+    <input type="password" name="password" ngModel required minlength="3"/>
+    <div *ngIf="loginRef.controls['password']?.invalid && loginRef.controls['password']?.touched">
+        <span [hidden]="!loginRef.controls['password']?.hasError('required')" style="color:red">Password is required</span>
+        <span [hidden]="!loginRef.controls['password']?.hasError('minlength')" style="color:red">Password must be min 3 character</span>
+    </div>
+    <br/>
+        <input type="submit" value="submit" [disabled]="loginRef.invalid"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <span style="color:red">{{msg}}</span>
+</div>

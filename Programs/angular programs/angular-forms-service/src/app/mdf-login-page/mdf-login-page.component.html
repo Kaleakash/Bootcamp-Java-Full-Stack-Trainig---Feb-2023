@@ -1,0 +1,24 @@
+<div>
+    <h2>Logn page using model driven form</h2>
+    <form [formGroup]="loginRef" >
+        <label>EmailId</label>
+        <input type="email" formControlName="email"/>
+       
+        <div *ngIf="loginRef.controls['email']?.invalid && loginRef.controls['email']?.touched">
+            <span [hidden]="!loginRef.controls['email']?.hasError('required')" style="color:red">EmailId is required</span>
+            <span [hidden]="!loginRef.controls['email']?.hasError('pattern')" style="color:red">Emailid must follow pattern</span>
+        </div>
+
+        <br/>
+        <label>Password</label>
+        <input type="password" formControlName="password"/>
+        <div *ngIf="loginRef.controls['password']?.invalid && loginRef.controls['password']?.touched">
+            <span [hidden]="!loginRef.controls['password']?.hasError('required')" style="color:red">Password is required</span>
+            <span [hidden]="!loginRef.controls['password']?.hasError('minlength')" style="color:red">Password must be min 3 character</span>
+        </div>
+        <br/>
+        <input type="button" value="submit" (click)="signIn()" [disabled]="loginRef.invalid"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <span style="color:red">{{msg}}</span>
+</div>
