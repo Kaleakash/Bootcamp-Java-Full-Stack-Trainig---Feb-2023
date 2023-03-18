@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 
@@ -7,13 +7,17 @@ import { ProductService } from '../product.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit{
 
-  products:Array<Product>=[];
+  //products:Array<Product>=[];
+  products:Product[]=[];
   constructor(public ps:ProductService){    // DI for ProductService
 
   }
-
+  // it will call only once when component get loaded...
+  ngOnInit(): void {
+    this.loadProductData();
+  }
   loadProductData() : void {
     //this.ps.loadProductData();      // calling service method
 
