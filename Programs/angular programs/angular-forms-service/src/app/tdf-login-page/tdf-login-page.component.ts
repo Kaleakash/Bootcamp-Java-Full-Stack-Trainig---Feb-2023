@@ -9,7 +9,7 @@ import { LoginService } from '../login.service';
 })
 export class TdfLoginPageComponent {
 
-  constructor(public ls:LoginService){}     // pull the object using DI concept. 
+  constructor(private ls:LoginService){}     // pull the object using DI concept. 
 
   msg:string="";
   signIn(loginRef:NgForm){
