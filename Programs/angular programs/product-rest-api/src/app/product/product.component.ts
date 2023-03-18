@@ -18,7 +18,7 @@ export class ProductComponent {
     //this.ps.loadProductData();      // calling service method
 
     this.ps.loadProductData().subscribe({
-      next1:(data:any)=> {
+      next:(data:any)=> {
             this.products=data.products
       },
       error:(error:any)=> {
