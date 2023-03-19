@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ProductComponent } from './product/product/product.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import { ProductComponent } from './product/product/product.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule
+    AppRoutingModule,ReactiveFormsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
