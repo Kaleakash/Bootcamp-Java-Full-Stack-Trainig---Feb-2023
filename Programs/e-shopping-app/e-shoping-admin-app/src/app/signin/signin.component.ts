@@ -24,6 +24,7 @@ export class SigninComponent implements OnInit{
     let admin = this.loginRef.value;
     if(this.authService.signIn(admin)){
         alert("Successfully login")
+        sessionStorage.setItem("admin",admin.emailid);
         this.router.navigate(["home"]);
     }else {
         alert("failure try once again");
