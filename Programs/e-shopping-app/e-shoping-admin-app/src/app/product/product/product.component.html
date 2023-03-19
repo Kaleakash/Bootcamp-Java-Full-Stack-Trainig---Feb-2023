@@ -12,6 +12,7 @@
                 <th>Brand</th>
                 <th>Category</th>
                 <th>Thumbnail</th>
+                <td>Delete Product</td>
             </tr>
             <tr *ngFor="let product of products">
                 <td>{{product.id}}</td>
@@ -24,6 +25,7 @@
                 <td>{{product.brand}}</td>
                 <td>{{product.category}}</td>
                 <td><img src={{product.thumbnail}} width="100px" height="100px"/></td>
+                <td><input type="button" value="Delete Product" (click)="deleteProduct(product.id)"/></td>
             </tr>
     </table>
 </div>

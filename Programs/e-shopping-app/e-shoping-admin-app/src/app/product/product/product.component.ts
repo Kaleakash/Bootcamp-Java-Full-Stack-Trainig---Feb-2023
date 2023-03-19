@@ -13,6 +13,9 @@ export class ProductComponent implements OnInit{
 
   }
   ngOnInit(): void {
+    this.loadAllProducts();
+  }
+  loadAllProducts() {
     this.productService.loadAllProductDetails().subscribe({
       next:(result:any)=> {
           this.products=result;
@@ -25,4 +28,21 @@ export class ProductComponent implements OnInit{
       }
     })
   }
+  deleteProduct(pid:any){
+    //console.log(pid);
+    //alert(pid);
+    this.productService.deleteProductById(pid).subscribe({
+      next:(result:any)=> {
+          console.log(result)
+      },
+      error:(error:any)=> {
+          console.log(error)
+      },
+      complete:()=> {
+        this.loadAllProducts();
+          console.log("record deteted")
+      }
+    })
+  }
+
 }
