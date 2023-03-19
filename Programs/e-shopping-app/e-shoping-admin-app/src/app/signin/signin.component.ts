@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { FormGroup ,FormBuilder} from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 @Component({
   selector: 'app-signin',
@@ -7,10 +8,10 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit{
-
   loginRef!:FormGroup;
-
-  constructor(public formBuilder:FormBuilder,public authService:AuthService){}   // di for formbuild 
+  msg:string="";
+  constructor(public formBuilder:FormBuilder,public authService:AuthService
+    , public router:Router){}   // di for formbuild 
  
   ngOnInit(): void {
     this.loginRef=this.formBuilder.group({
@@ -19,13 +20,14 @@ export class SigninComponent implements OnInit{
     });
 
   }
-
   signIn(){
     let admin = this.loginRef.value;
     if(this.authService.signIn(admin)){
         alert("Successfully login")
+        this.router.navigate(["home"]);
     }else {
-        alert("failure try once again")
+        alert("failure try once again");
+        this.msg = "Invalid emailid or password";
     }
     this.loginRef.reset();
   }
