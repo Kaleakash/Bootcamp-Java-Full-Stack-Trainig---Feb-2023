@@ -31,18 +31,30 @@ export class ProductComponent implements OnInit{
   deleteProduct(pid:any){
     //console.log(pid);
     //alert(pid);
-    this.productService.deleteProductById(pid).subscribe({
-      next:(result:any)=> {
-          console.log(result)
-      },
-      error:(error:any)=> {
-          console.log(error)
-      },
-      complete:()=> {
-        this.loadAllProducts();
-          console.log("record deteted")
-      }
-    })
+    let flag = confirm("Do you want to delete");
+    if(flag){
+        
+      this.productService.deleteProductById(pid).subscribe({
+        next:(result:any)=> {
+            console.log(result)
+        },
+        error:(error:any)=> {
+            console.log(error)
+        },
+        complete:()=> {
+          this.loadAllProducts();
+            console.log("record deteted")
+        }
+      })
+
+    }else {
+      alert("Product id didn't delete")
+    }
+    
   }
 
+  sortByPrice(){
+    alert("Hi")
+    this.products.sort((p1,p2)=>p2.price-p1.price);
+  }
 }
