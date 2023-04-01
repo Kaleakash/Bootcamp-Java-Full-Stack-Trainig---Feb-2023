@@ -1,5 +1,5 @@
-<div>
-    <h2>All Products</h2>
+
+    <!-- <h2>All Products</h2>
     <table>
             <tr>
                 <th>PId</th>
@@ -27,5 +27,18 @@
                 <td><img src={{product.thumbnail}} width="100px" height="100px"/></td>
                 <td><input type="button" value="Delete Product" (click)="deleteProduct(product)"/></td>
             </tr>
-    </table>
+    </table> -->
+<div class="container">
+    <div class="row">
+        <div *ngFor="let product of products" class="col-2 myClass">
+            <img src={{product.thumbnail}} width="150px" height="120px"/>
+            <span>{{product.title}} {{product.price}}</span>
+            <a (click)="addToCart(product)">
+                <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" width="50px" height="50px"/>
+            </a>
+            <a (click)="addToWishlist(product)">
+            <img src="https://cdn-icons-png.flaticon.com/512/2767/2767018.png" width="50px" height="50px"/>
+            </a>
+        </div>
+    </div>
 </div>

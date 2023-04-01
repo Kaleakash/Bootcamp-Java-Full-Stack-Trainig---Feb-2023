@@ -57,4 +57,11 @@ export class ProductComponent implements OnInit{
     alert("Hi")
     this.products.sort((p1,p2)=>p2.price-p1.price);
   }
+
+  addToCart(product:any){
+      console.log(product)
+  }
+  addToWishlist(product:any){
+    console.log(product)
+  }
 }
