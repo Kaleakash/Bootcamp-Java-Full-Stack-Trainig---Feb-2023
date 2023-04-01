@@ -8,6 +8,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ProductComponent } from './product/product/product.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { CartComponent } from './cart/cart.component';
 // we have to write navigation rules 
 // http://localhost:4200/aboutus
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
 {path:"login",component:SigninComponent},
 {path:"home",component:DashboardComponent,canActivate:[AuthGuard],children:[
   {path:"product",component:ProductComponent},  
+  {path:"viewCart",component:CartComponent},
   {path:"logout",component:LogoutComponent}
 ]},
 {path:"signup",component:SignupComponent}

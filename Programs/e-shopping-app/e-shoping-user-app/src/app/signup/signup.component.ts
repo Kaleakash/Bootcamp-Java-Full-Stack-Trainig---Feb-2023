@@ -34,6 +34,7 @@ export class SignupComponent implements OnInit{
 
   signUp(): void {
     let user = this.userRef.value;
+    
     console.log(user);
     this.authService.signUp(user).subscribe({
       next:(result:any)=> {
