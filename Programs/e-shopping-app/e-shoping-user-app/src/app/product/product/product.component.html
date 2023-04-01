@@ -1,0 +1,31 @@
+<div>
+    <h2>All Products</h2>
+    <table>
+            <tr>
+                <th>PId</th>
+                <th>PName</th>
+                <th>Description</th>
+                <th><a (click)="sortByPrice()">Price</a></th>
+                <th>Discount</th>
+                <th>Rating</th>
+                <th>Stock</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Thumbnail</th>
+                <td>Delete Product</td>
+            </tr>
+            <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.title}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>   
+                <td>{{product.discountPercentage}}</td>
+                <td>{{product.rating}}</td>
+                <td>{{product.stock}}</td>
+                <td>{{product.brand}}</td>
+                <td>{{product.category}}</td>
+                <td><img src={{product.thumbnail}} width="100px" height="100px"/></td>
+                <td><input type="button" value="Delete Product" (click)="deleteProduct(product)"/></td>
+            </tr>
+    </table>
+</div>

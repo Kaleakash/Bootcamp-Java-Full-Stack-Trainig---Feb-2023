@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'e-shoping-user-app'`, () => {
+  it(`should have as title 'e-shoping-admin-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('e-shoping-user-app');
+    expect(app.title).toEqual('e-shoping-admin-app');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('e-shoping-user-app app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('e-shoping-admin-app app is running!');
   });
 });
