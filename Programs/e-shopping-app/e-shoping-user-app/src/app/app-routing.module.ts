@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ProductComponent } from './product/product/product.component';
 import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 // we have to write navigation rules 
 // http://localhost:4200/aboutus
 const routes: Routes = [
@@ -16,8 +17,8 @@ const routes: Routes = [
 {path:"home",component:DashboardComponent,canActivate:[AuthGuard],children:[
   {path:"product",component:ProductComponent},  
   {path:"logout",component:LogoutComponent}
-]}
-
+]},
+{path:"signup",component:SignupComponent}
 ];
 
 @NgModule({

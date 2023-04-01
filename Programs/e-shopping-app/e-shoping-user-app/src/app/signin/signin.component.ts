@@ -29,7 +29,7 @@ export class SigninComponent implements OnInit{
           //console.log(result);
           if(result!=undefined){
             alert("successfully login!")
-      sessionStorage.setItem("user",JSON.stringify(result));   // stroring in session storage and converting in string. 
+   sessionStorage.setItem("user",JSON.stringify(result));   // stroring in session storage and converting in string. 
             this.router.navigate(["home"]);
           }else {
             alert("failure try once again");

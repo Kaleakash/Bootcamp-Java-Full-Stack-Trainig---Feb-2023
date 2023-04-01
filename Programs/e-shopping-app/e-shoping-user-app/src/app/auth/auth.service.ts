@@ -21,6 +21,9 @@ export class AuthService {
     return this.http.get<User[]>("http://localhost:3000/users");    
   }
 
+  signUp(user:any):Observable<any> {
+    return this.http.post("http://localhost:3000/users",user);
+  }
 }
 
 

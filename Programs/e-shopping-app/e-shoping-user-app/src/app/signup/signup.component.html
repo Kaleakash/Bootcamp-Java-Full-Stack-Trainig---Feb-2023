@@ -1,0 +1,34 @@
+<div>
+    <h2>Account Created</h2>
+    <form [formGroup]="userRef" (ngSubmit)="signUp()">
+        <label>UserName</label>
+        <input type="text" formControlName="username"/><br/>
+        <label>FullName</label>
+        <input type="text" formControlName="fullName"/><br/>
+        
+        <div formGroupName="address">
+        <label>Street</label>
+        <input type="text" formControlName="street"/><br/>
+        <label>City</label>
+        <input type="text" formControlName="city"/><br/>
+        <label>State</label>
+        <input type="text" formControlName="state"/><br/>
+        <label>Pincode</label>
+        <input type="number" formControlName="pincode"/><br/>
+        </div>
+
+        <label>EmailId</label>
+        <input type="email" formControlName="emailid"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="password"/><br/>
+        <label>Profile Image</label>
+        <input type="text" formControlName="img"/><br/>
+        <label>contact</label>
+        <input type="number" formControlName="contact"/><br/>
+        <input type="submit" value="SignUp"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <span style="color:red"></span>
+    <br/>
+    <a routerLink="/login">SignIn</a>
+</div>
