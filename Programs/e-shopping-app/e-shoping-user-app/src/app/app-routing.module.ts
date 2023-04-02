@@ -15,12 +15,13 @@ const routes: Routes = [
 {path:"aboutus",component:AboutusComponent},
 {path:"contactus",component:ContactusComponent},
 {path:"login",component:SigninComponent},
+{path:"signup",component:SignupComponent},
+
 {path:"home",component:DashboardComponent,canActivate:[AuthGuard],children:[
   {path:"product",component:ProductComponent},  
   {path:"viewCart",component:CartComponent},
   {path:"logout",component:LogoutComponent}
-]},
-{path:"signup",component:SignupComponent}
+]}
 ];
 
 @NgModule({

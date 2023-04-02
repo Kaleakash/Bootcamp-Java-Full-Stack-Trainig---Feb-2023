@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './cart.service';
 import { Cart } from './cart';
+import { Order } from '../order/order';
+import { OrderService } from '../order/order.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,10 +12,15 @@ import { Cart } from './cart';
 export class CartComponent implements OnInit{
 
   cartInfo:Array<Cart>=[];
-  constructor(public cartService:CartService){
+  user:any;
+  constructor(public cartService:CartService,public orderService:OrderService){
 
   }
   ngOnInit(): void {
+    let obj = sessionStorage.getItem("user");
+    if(obj!= null){
+        this.user = JSON.parse(obj);
+    }
       this.cartService.getCart.subscribe({
 
         next:(data:any)=> {
@@ -53,6 +60,37 @@ export class CartComponent implements OnInit{
         return previousValue+currentValue.qty *currentValue.price;       
       },0)
   }
-
+  paymentFlag:boolean = false;
+  processedForPayment(){
+    this.paymentFlag=true;
+    let orderDetails= new Order();
+    orderDetails.orderDate=new Date();
+    orderDetails.products=this.cartInfo;  // array value set 
+    orderDetails.totalItems=this.cartInfo.length;
+    orderDetails.shipmentCharges=100;
+    orderDetails.totalAmount=this.totalPrice;
+    orderDetails.userId=this.user.id;
+    orderDetails.name= this.user.fullName;
+    orderDetails.email=this.user.email;
+    orderDetails.contact=this.user.contact;
+    // console.log(this.cartInfo);
+    // console.log(this.totalPrice);
+    // console.log(this.user);
+    console.log(orderDetails);
+    this.orderService.orderPlaced(orderDetails).subscribe({
+      next:(result:any)=> {
+            console.log(result);
+      },
+      error:(error:any)=> {
+          console.log(error)
+      },
+      complete:()=> {
+          console.log("order placed successfully")
+      }
+    })   
+    this.cartInfo.splice(0,this.cartInfo.length); 
+    this.totalPrice=0;
+  }
+  
   
 }
