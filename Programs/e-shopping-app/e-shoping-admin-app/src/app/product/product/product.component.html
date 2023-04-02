@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     <h2>All Products</h2>
     <table>
             <tr>
@@ -12,7 +12,7 @@
                 <th>Brand</th>
                 <th>Category</th>
                 <th>Thumbnail</th>
-                <td>Delete Product</td>
+                <th>Delete Product</th>
             </tr>
             <tr *ngFor="let product of products">
                 <td>{{product.id}}</td>
@@ -25,7 +25,12 @@
                 <td>{{product.brand}}</td>
                 <td>{{product.category}}</td>
                 <td><img src={{product.thumbnail}} width="100px" height="100px"/></td>
-                <td><input type="button" value="Delete Product" (click)="deleteProduct(product)"/></td>
+                <td>
+                   <a (click)="deleteProduct(product.id)">
+                    <img src="https://cdn5.vectorstock.com/i/1000x1000/70/04/delete-icon-vector-3917004.jpg"
+                    width="50px" height="50px"/>
+                   </a> 
+                    <!-- <input type="button" value="Delete Product" (click)="deleteProduct(product)"/></td> -->
             </tr>
     </table>
 </div>

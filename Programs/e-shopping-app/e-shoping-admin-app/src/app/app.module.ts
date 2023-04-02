@@ -11,6 +11,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ProductComponent } from './product/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoryComponent } from './category/category/category.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +22,12 @@ import { HttpClientModule } from '@angular/common/http';
     SigninComponent,
     DashboardComponent,
     LogoutComponent,
-    ProductComponent
+    ProductComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,ReactiveFormsModule,HttpClientModule
+    AppRoutingModule,ReactiveFormsModule,HttpClientModule,NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
