@@ -13,6 +13,7 @@ import { ProductComponent } from './product/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryComponent } from './category/category/category.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserComponent } from './user/user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DashboardComponent,
     LogoutComponent,
     ProductComponent,
-    CategoryComponent
+    CategoryComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
