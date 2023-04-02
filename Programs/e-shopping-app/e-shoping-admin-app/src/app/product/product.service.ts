@@ -20,4 +20,7 @@ export class ProductService {
     return this.httpClient.delete(this.baseUrl+"/"+pid);
   }
 
+  storeProduct(product:Product):Observable<any> {
+    return this.httpClient.post(this.baseUrl,product);
+  }
 }
