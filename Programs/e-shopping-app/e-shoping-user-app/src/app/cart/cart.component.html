@@ -4,9 +4,9 @@
             <th>Title</th>
             <th>Price</th>
             <th>Quantity</th>
-            <td>Increment</td>
-            <td>Decrement</td>
-            <td>Remove</td>
+            <th>Increment</th>
+            <th>Decrement</th>
+            <th>Remove</th>
         </tr>
         <tr *ngFor="let cart of cartInfo;let i=index;">
                 <td>{{cart.title}}</td>
@@ -17,8 +17,8 @@
                 <td><a (click)="remove(cart,i)"><img src="https://cdn-icons-png.flaticon.com/512/9283/9283917.png" width="50px" height="50px"></a></td>
         </tr>
         <tr>
-            <td>Total</td>
-            <td>{{totalPrice}}</td>
+            <th>Total</th>
+            <th>{{totalPrice}}</th>
         </tr>
     </table>
 </div>

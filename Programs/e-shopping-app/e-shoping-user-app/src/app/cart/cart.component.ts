@@ -53,4 +53,6 @@ export class CartComponent implements OnInit{
         return previousValue+currentValue.qty *currentValue.price;       
       },0)
   }
+
+  
 }

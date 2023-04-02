@@ -31,9 +31,186 @@
       "password": "will@123",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4aqwoL7VUtABCU-Ue2Bv_q56l_sreWwmyD93AXMwILHNASxrMvOei2xL1MVvnslIxo28&usqp=CAU",
       "contact": "42343434545"
+    },
+    {
+      "username": "Steven",
+      "fullName": "StevenLex",
+      "address": {
+        "street": "#123/45",
+        "city": "Bangalore",
+        "state": "Karnatak",
+        "pincode": 560096
+      },
+      "emailid": "steven@gmail.com",
+      "password": "steven@123",
+      "img": "data:image/jpeg;base64,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",
+      "contact": 7678965678,
+      "id": 201
     }
   ],
   "products": [
+    {
+      "id": 1,
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 549,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/1/1.jpg",
+        "https://i.dummyjson.com/data/products/1/2.jpg",
+        "https://i.dummyjson.com/data/products/1/3.jpg",
+        "https://i.dummyjson.com/data/products/1/4.jpg",
+        "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/2/1.jpg",
+        "https://i.dummyjson.com/data/products/2/2.jpg",
+        "https://i.dummyjson.com/data/products/2/3.jpg",
+        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "discountPercentage": 15.46,
+      "rating": 4.09,
+      "stock": 36,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/3/1.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "OPPOF19",
+      "description": "OPPO F19 is officially announced on April 2021.",
+      "price": 280,
+      "discountPercentage": 17.91,
+      "rating": 4.3,
+      "stock": 123,
+      "brand": "OPPO",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/4/1.jpg",
+        "https://i.dummyjson.com/data/products/4/2.jpg",
+        "https://i.dummyjson.com/data/products/4/3.jpg",
+        "https://i.dummyjson.com/data/products/4/4.jpg",
+        "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Huawei P30",
+      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+      "price": 499,
+      "discountPercentage": 10.58,
+      "rating": 4.09,
+      "stock": 32,
+      "brand": "Huawei",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/5/1.jpg",
+        "https://i.dummyjson.com/data/products/5/2.jpg",
+        "https://i.dummyjson.com/data/products/5/3.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "MacBook Pro",
+      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+      "price": 1749,
+      "discountPercentage": 11.02,
+      "rating": 4.57,
+      "stock": 83,
+      "brand": "Apple",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+      "images": [
+        "https://i.dummyjson.com/data/products/6/1.png",
+        "https://i.dummyjson.com/data/products/6/2.jpg",
+        "https://i.dummyjson.com/data/products/6/3.png",
+        "https://i.dummyjson.com/data/products/6/4.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Samsung Galaxy Book",
+      "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
+      "price": 1499,
+      "discountPercentage": 4.15,
+      "rating": 4.25,
+      "stock": 50,
+      "brand": "Samsung",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/7/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/7/1.jpg",
+        "https://i.dummyjson.com/data/products/7/2.jpg",
+        "https://i.dummyjson.com/data/products/7/3.jpg",
+        "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Microsoft Surface Laptop 4",
+      "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
+      "price": 1499,
+      "discountPercentage": 10.23,
+      "rating": 4.43,
+      "stock": 68,
+      "brand": "Microsoft Surface",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/8/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/8/1.jpg",
+        "https://i.dummyjson.com/data/products/8/2.jpg",
+        "https://i.dummyjson.com/data/products/8/3.jpg",
+        "https://i.dummyjson.com/data/products/8/4.jpg",
+        "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Infinix INBOOK",
+      "description": "Infinix Inbook X1 Ci3 10th 8GB 256GB 14 Win10 Grey – 1 Year Warranty",
+      "price": 1099,
+      "discountPercentage": 11.83,
+      "rating": 4.54,
+      "stock": 96,
+      "brand": "Infinix",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/9/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/9/1.jpg",
+        "https://i.dummyjson.com/data/products/9/2.png",
+        "https://i.dummyjson.com/data/products/9/3.png",
+        "https://i.dummyjson.com/data/products/9/4.jpg",
+        "https://i.dummyjson.com/data/products/9/thumbnail.jpg"
+      ]
+    },
     {
       "id": 10,
       "title": "HP Pavilion 15-DK1056WM",
@@ -143,6 +320,25 @@
         "https://i.dummyjson.com/data/products/15/3.jpg",
         "https://i.dummyjson.com/data/products/15/4.jpg",
         "https://i.dummyjson.com/data/products/15/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Hyaluronic Acid Serum",
+      "description": "L'OrÃ©al Paris introduces Hyaluron Expert Replumping Serum formulated with 1.5% Hyaluronic Acid",
+      "price": 19,
+      "discountPercentage": 13.31,
+      "rating": 4.83,
+      "stock": 110,
+      "brand": "L'Oreal Paris",
+      "category": "skincare",
+      "thumbnail": "https://i.dummyjson.com/data/products/16/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/16/1.png",
+        "https://i.dummyjson.com/data/products/16/2.webp",
+        "https://i.dummyjson.com/data/products/16/3.jpg",
+        "https://i.dummyjson.com/data/products/16/4.jpg",
+        "https://i.dummyjson.com/data/products/16/thumbnail.jpg"
       ]
     },
     {
@@ -456,5 +652,73 @@
       "addedOn": "11 Dec 2020"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": 1111,
+      "orderDate": "03 December 2021",
+      "orderStatus": "Pending",
+      "products": [
+        {
+          "productId": 1,
+          "productTitle": "iPhone 9",
+          "productImg": "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+          "brand": "Apple",
+          "productDescription": "Easy upgrade for faster boot up, shutdown, application load and response",
+          "productCategory": "smartphones",
+          "price": 549,
+          "quantity": 2,
+          "totalPrice": 918
+        }
+      ],
+      "totalItems": 2,
+      "itemsSubTotal": 918,
+      "shipmentCharges": 50,
+      "totalAmount": 968,
+      "paymentStatus": "Pending",
+      "paymentMethodTitle": "Cash on Delivery (COD)",
+      "userId": 1,
+      "name": "John Snow",
+      "email": "john.snow@gmail.com",
+      "contact": "9849485545",
+      "address": "Los Angeles, California US 1400022"
+    },
+    {
+      "id": 2222,
+      "orderDate": "05 April 2022",
+      "orderStatus": "Confirm",
+      "ordesProducts": [
+        {
+          "productId": 1,
+          "productTitle": "HP Pavilion 15-DK1056WM",
+          "productImg": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
+          "productDescription": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+          "productCategory": "laptops",
+          "price": 1099,
+          "quantity": 1,
+          "totalPrice": 1099
+        },
+        {
+          "productId": 2,
+          "productTitle": "Key Holder",
+          "productImg": "https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_SX679_.jpg",
+          "productDescription": "Attractive DesignMetallic materialFour key hooksReliable & DurablePremium Quality",
+          "productCategory": "home-decoration",
+          "price": 30,
+          "quantity": 4,
+          "totalPrice": 120
+        }
+      ],
+      "totalItems": 5,
+      "itemsSubTotal": 1219,
+      "shipmentCharges": 100,
+      "totalAmount": 1319,
+      "paymentStatus": "Paid",
+      "paymentMethodTitle": "Credit Card",
+      "userId": 2,
+      "name": "Will Smith",
+      "email": "will.smith@gmail.com",
+      "contact": "42343434545",
+      "address": "Houston, Texas US 5566022"
+    }
+  ]
 }
