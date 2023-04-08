@@ -18,4 +18,11 @@ public class Car {
 	void stop() {
 		System.out.println("Car stop");
 	}
+	
+	void displayCarDetails(String name) {
+		System.out.println("Name of the car "+name);
+		System.out.println("wheel "+wheel);
+		System.out.println("color "+color);
+		System.out.println("amount "+amount);
+	}
 }
