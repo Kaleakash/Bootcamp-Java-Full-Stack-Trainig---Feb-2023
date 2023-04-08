@@ -1,8 +1,8 @@
 package abc;
 
 public class Employee {
-	String name;				// instance variable 
-	float salary;	
+	private String name;				// instance variable 
+	private float salary;	
 	
 	Employee() {
     	System.out.println("object created..");
@@ -11,11 +11,20 @@ public class Employee {
 	}
 	Employee(String name, float salary){		// parameter variable or local variable 
 		this.name = name;			// instance variable = local variable 
-		this.salary =salary;
+		if(salary<0) {
+			this.salary = 8000;
+		}else {
+			this.salary = salary;
+		}
 	}
 	void setValue(String name, float salary) {
 		this.name = name;
-		this.salary = salary;
+		//this.salary = salary;
+		if(salary<0) {
+			this.salary = 8000;
+		}else {
+			this.salary = salary;
+		}
 	}
 	void display() {
 		System.out.println("This is employee display method");
