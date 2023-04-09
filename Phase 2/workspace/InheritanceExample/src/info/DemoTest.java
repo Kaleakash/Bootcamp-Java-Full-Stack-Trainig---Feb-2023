@@ -4,6 +4,7 @@ public class DemoTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//Employee emp = new Employee();
 		System.out.println("Enter the manager details");
 		Manager mgr = new Manager();
 		//mgr.readEmp();
