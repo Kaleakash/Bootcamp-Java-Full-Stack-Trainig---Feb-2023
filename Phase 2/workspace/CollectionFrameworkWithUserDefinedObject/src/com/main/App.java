@@ -54,7 +54,7 @@ public class App {
 			         pid = sc.nextInt();
 			         System.out.println("Enter the product price");
 			         price = sc.nextFloat();
-			         Product p3 = new Product();
+			         	Product p3 = new Product();
 			         p3.setPid(pid);
 			         p3.setPrice(price);
 			         result = ps.updateProductPrice(p3);
