@@ -1,6 +1,6 @@
 package com.bean;
 
-public class Product {
+public class Product extends Object{
 private int pid;
 private String pname;
 private float price;
@@ -32,5 +32,22 @@ public Product(int pid, String pname, float price) {
 	this.pname = pname;
 	this.price = price;
 }
+@Override
+public String toString() {
+	return "Product [pid=" + pid + ", pname=" + pname + ", price=" + price + "]";
+}
+
+
+//@Override
+//public String toString() {
+//	return "This is product class object";
+//}
 
 }
+
+
+
+
+
+
+
