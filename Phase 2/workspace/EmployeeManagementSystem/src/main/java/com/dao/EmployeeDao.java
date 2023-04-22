@@ -8,13 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.bean.Employee;
+import com.resource.DbResource;
 
 public class EmployeeDao {
-
+	Connection con;
+	
+	public EmployeeDao() {
+	con = DbResource.getDbConnection();
+	}
+	
 	public int storeEmployee(Employee employee) {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_java_db", "root", "root@123");
 	PreparedStatement pstmt = con.prepareStatement("insert into employee values(?,?,?)");
 	pstmt.setInt(1, employee.getId());
 	pstmt.setString(2,employee.getName());
@@ -28,8 +32,6 @@ public class EmployeeDao {
 	
 	public int updateEmployee(Employee employee) {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_java_db", "root", "root@123");
 	PreparedStatement pstmt = con.prepareStatement("update employee set salary = ? where id = ?");
 	pstmt.setInt(2, employee.getId());
 	pstmt.setFloat(1, employee.getSalary());
@@ -41,8 +43,6 @@ public class EmployeeDao {
 	}
 	public int deleteEmployee(Employee employee) {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_java_db", "root", "root@123");
 	PreparedStatement pstmt = con.prepareStatement("delete from employee where id =?");
 	pstmt.setInt(1, employee.getId());
 	return pstmt.executeUpdate();
@@ -55,8 +55,6 @@ public class EmployeeDao {
 	
 	public Employee findEmployeeById(int id) {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_java_db", "root", "root@123");
 	PreparedStatement pstmt = con.prepareStatement("select * from employee where id = ?");
 	pstmt.setInt(1, id);
 	ResultSet rs = pstmt.executeQuery();
@@ -77,8 +75,6 @@ public class EmployeeDao {
 	public List<Employee> findEmployees() {
 		List<Employee> listOfEmp = new ArrayList<>();
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_java_db", "root", "root@123");
 	PreparedStatement pstmt = con.prepareStatement("select * from employee");
 	ResultSet rs = pstmt.executeQuery();
 	while(rs.next()) {
