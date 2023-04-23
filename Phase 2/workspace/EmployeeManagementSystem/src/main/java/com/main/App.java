@@ -29,13 +29,13 @@ public class App {
 //		System.out.println(result);
 		
 		// search employee by id
-//		String result = es.findEmployee(101);
-//		System.out.println(result);
+		String result = es.findEmployee(1010);
+		System.out.println(result);
 		
-		List<Employee> listOfEmp = es.findAllEmployee();
-		for(Employee emp:listOfEmp) {
-			System.out.println(emp);
-		}
+//		List<Employee> listOfEmp = es.findAllEmployee();
+//		for(Employee emp:listOfEmp) {
+//			System.out.println(emp);
+//		}
 		
 		
 		
