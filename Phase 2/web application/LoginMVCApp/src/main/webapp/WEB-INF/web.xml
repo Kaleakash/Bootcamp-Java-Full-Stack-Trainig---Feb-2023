@@ -14,4 +14,14 @@
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProdutController</display-name>
+    <servlet-name>ProdutController</servlet-name>
+    <servlet-class>com.controller.ProdutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProdutController</servlet-name>
+    <url-pattern>/ProdutController</url-pattern>
+  </servlet-mapping>
 </web-app>

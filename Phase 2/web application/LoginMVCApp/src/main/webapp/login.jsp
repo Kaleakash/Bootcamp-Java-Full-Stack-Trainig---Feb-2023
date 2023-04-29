@@ -18,5 +18,8 @@
 </form>
 <br/>
 <a href="signUp.jsp">SignUp</a>
+
+<hr/>
+
 </body>
 </html>
