@@ -24,4 +24,24 @@
     <servlet-name>ProdutController</servlet-name>
     <url-pattern>/ProdutController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductJsonController</display-name>
+    <servlet-name>ProductJsonController</servlet-name>
+    <servlet-class>com.controller.ProductJsonController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductJsonController</servlet-name>
+    <url-pattern>/ProductJsonController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetProductInfo</display-name>
+    <servlet-name>GetProductInfo</servlet-name>
+    <servlet-class>com.controller.GetProductInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetProductInfo</servlet-name>
+    <url-pattern>/GetProductInfo</url-pattern>
+  </servlet-mapping>
 </web-app>
