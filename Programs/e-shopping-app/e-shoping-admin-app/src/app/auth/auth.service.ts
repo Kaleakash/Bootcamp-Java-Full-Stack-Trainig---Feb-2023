@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Admin } from '../model/admin';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Admin } from '../model/admin';
 export class AuthService {
 
   private loggedIn = new BehaviorSubject<boolean>(false);
-  constructor() { }
+  constructor(public http:HttpClient) { }  // DI for HttpClient 
   
   get isLoggedIn():Observable<boolean>{
     return this.loggedIn.asObservable();
@@ -21,12 +22,32 @@ export class AuthService {
   }
   
   // http.get()
-  signIn(admin:Admin):boolean {
-    if(admin.emailid=="admin@gmail.com" && admin.password=="admin@123"){
-      return true;
-    }else {
-      return false;
-    }
+  // signIn(admin:Admin):boolean {
+  //   if(admin.emailid=="admin@gmail.com" && admin.password=="admin@123"){
+  //     return true;
+  //   }else {
+  //     return false;
+  //   }
+  // }
+
+  // signIn(admin:Admin):boolean {
+  //   this.http.post("http://localhost:8080/phase2-backend-restapi/AdminController",admin,{responseType:'text'}).subscribe({
+  //     next:(result:any)=> {
+  //       console.log(result)
+  //     },
+  //     error:(error:any)=> {
+  //       console.log(error)
+  //     },
+  //     complete:()=> {
+  //       console.log("done!")
+  //     }
+  //   })
+
+  //   return false;
+  // }
+
+  signIn(admin:Admin):Observable<String> {
+    return this.http.post("http://localhost:8080/phase2-backend-restapi/AdminController",admin,{responseType:'text'})
   }
 
 }
