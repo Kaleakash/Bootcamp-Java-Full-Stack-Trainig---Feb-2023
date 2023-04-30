@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CategoryService {
-  public baseUrl:string ="http://localhost:3000/categories"
+  //public baseUrl:string ="http://localhost:3000/categories"
+  public baseUrl:string ="http://localhost:8080/phase2-backend-restapi/CategoryController"
   constructor(public httpClient:HttpClient) { }
 
   loadCategory():Observable<Category[]> {

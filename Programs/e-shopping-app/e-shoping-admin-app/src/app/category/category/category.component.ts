@@ -48,6 +48,7 @@ export class CategoryComponent implements OnInit{
     this.categoryService.storeCategory(category).subscribe({
       next:(data:any)=> {
           console.log(data);
+          this.loadCategories();
           alert("category details stored succssessfully")
       },
       error:(error:any)=> {
