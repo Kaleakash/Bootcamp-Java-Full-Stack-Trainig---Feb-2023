@@ -12,12 +12,12 @@
                 <th>Rating</th>
                 <th>Stock</th>
                 <th>Brand</th>
-                <th>Category</th>
+                <th>CId</th>
                 <th>Thumbnail</th>
                 <th>Delete Product</th>
             </tr>
             <tr *ngFor="let product of products">
-                <td>{{product.id}}</td>
+                <td>{{product.pid}}</td>
                 <td>{{product.title}}</td>
                 <td>{{product.description}}</td>
                 <td>{{product.price}}</td>   
@@ -25,10 +25,10 @@
                 <td>{{product.rating}}</td>
                 <td>{{product.stock}}</td>
                 <td>{{product.brand}}</td>
-                <td>{{product.category}}</td>
+                    <td>{{product.cid}}</td>
                 <td><img src={{product.thumbnail}} width="100px" height="100px"/></td>
                 <td>
-                   <a (click)="deleteProduct(product.id)">
+                   <a (click)="deleteProduct(product.pid)">
                     <img src="https://cdn5.vectorstock.com/i/1000x1000/70/04/delete-icon-vector-3917004.jpg"
                     width="50px" height="50px"/>
                    </a> 

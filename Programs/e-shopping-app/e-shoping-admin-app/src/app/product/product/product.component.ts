@@ -47,6 +47,14 @@ export class ProductComponent implements OnInit{
     this.productService.loadAllProductDetails().subscribe({
       next:(result:any)=> {
           this.products=result;
+          // for(let i=0;i<this.categories.length;i++){
+          //     for(let j=0;j<this.products.length;j++){
+          //           if(this.categories[i].cid==this.products[j].cid){
+          //             this.products[i].category=this.categories[j].categoryName;
+                      
+          //           }
+          //     }
+          // }
       },
       error:(error:any)=> {
 
@@ -83,7 +91,7 @@ export class ProductComponent implements OnInit{
 
   sortByPrice(){
     alert("Hi")
-    this.products.sort((p1,p2)=>p2.price-p1.price);
+    //this.products.sort((p1,p2)=>p2.price-p1.price);
   }
 
   addProductDetails(addProduct:any):void {
@@ -92,7 +100,9 @@ export class ProductComponent implements OnInit{
 
   storeProduct() {
     let product = this.productForm.value;
-    //console.log(product);
+    let productInfo = this.categories.find(c=>c.categoryName==product.category)
+    console.log(productInfo);
+    product.cid = productInfo?.cid;
     this.productService.storeProduct(product).subscribe({
       next:(data:any)=> {
           alert("Product stored ");

@@ -35,7 +35,7 @@ public class ProductDao {
 		}
 	}
 	
-	public List<Product> findAllCategory(){
+	public List<Product> findAllProducts(){
 		List<Product> listOfProduct = new ArrayList<>();
 		try {
 			PreparedStatement pstmt = con.prepareStatement("select * from product");
@@ -52,6 +52,7 @@ public class ProductDao {
 				p.setBrand(rs.getString(8));
 				p.setCid(rs.getInt(9));
 				p.setThumbnail(rs.getString(10));
+				listOfProduct.add(p);
 			}
 			} catch (Exception e) {
 				System.out.println(e);

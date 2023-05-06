@@ -10,6 +10,7 @@ public class CategoryService {
 	CategoryDao cd  = new CategoryDao();
 	
 	public String storeCategory(Category category) {
+		
 			if(cd.storeCategory(category)>0) {
 				return "Category details stored successfully";
 			}else {

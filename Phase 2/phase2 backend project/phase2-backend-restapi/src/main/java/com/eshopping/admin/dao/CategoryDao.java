@@ -29,6 +29,20 @@ public class CategoryDao {
 		}
 	}
 	
+	public int findCategoryId(String categoryName) {
+		try {
+			PreparedStatement pstmt = con.prepareStatement("select cid from category where categoryName=?");
+			pstmt.setString(1, categoryName);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				int categoryId = rs.getInt(1);
+				return categoryId;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return 0;
+	}
 	public List<Category> findAllCategory(){
 		List<Category> listOfCategory = new ArrayList<>();
 		try {
