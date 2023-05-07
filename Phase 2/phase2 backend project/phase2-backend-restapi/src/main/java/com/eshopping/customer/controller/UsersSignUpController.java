@@ -18,14 +18,14 @@ import com.google.gson.Gson;
 /**
  * Servlet implementation class UsersController
  */
-@WebServlet("/UsersController")
-public class UsersController extends HttpServlet {
+@WebServlet("/UsersSignUpController")
+public class UsersSignUpController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UsersController() {
+    public UsersSignUpController() {
         super();
         // TODO Auto-generated constructor stub
     }

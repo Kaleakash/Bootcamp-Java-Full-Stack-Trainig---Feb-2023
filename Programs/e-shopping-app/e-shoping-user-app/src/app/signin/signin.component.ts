@@ -20,21 +20,47 @@ export class SigninComponent implements OnInit{
     });
 
   }
-  signIn(){
-    let user = this.loginRef.value;
+  // signIn(){
+  //   let user = this.loginRef.value;
     
-    this.authService.signIn().subscribe({
+  //   this.authService.signIn().subscribe({
+  //     next:(data:any)=> {
+  //         let result = data.find((u:any)=>u.emailid==user.emailid && u.password==user.password);
+  //         //console.log(result);
+  //         if(result!=undefined){
+  //           alert("successfully login!")
+  //  sessionStorage.setItem("user",JSON.stringify(result));   // stroring in session storage and converting in string. 
+  //           this.router.navigate(["home"]);
+  //         }else {
+  //           alert("failure try once again");
+  //         this.msg = "Invalid emailid or password";
+  //         }
+  //       },
+  //     error:(error:any)=> {
+  //         console.log(error)
+  //     },
+  //     complete:()=> {
+  //         console.log("login done!")
+  //     }
+  //   })
+  //   this.loginRef.reset();
+  // }
+
+
+  signIn(){
+    let users = this.loginRef.value;
+    this.authService.signIn(users).subscribe({
       next:(data:any)=> {
-          let result = data.find((u:any)=>u.emailid==user.emailid && u.password==user.password);
-          //console.log(result);
-          if(result!=undefined){
-            alert("successfully login!")
-   sessionStorage.setItem("user",JSON.stringify(result));   // stroring in session storage and converting in string. 
-            this.router.navigate(["home"]);
-          }else {
-            alert("failure try once again");
-          this.msg = "Invalid emailid or password";
-          }
+          console.log(data);
+
+          if(data === "success"){
+                      alert("successfully login!")
+                       sessionStorage.setItem("user",JSON.stringify(users));   // stroring in session storage and converting in string. 
+                      this.router.navigate(["home"]);
+                    }else {
+                      alert("failure try once again");
+                    this.msg = "Invalid emailid or password";
+                    }
         },
       error:(error:any)=> {
           console.log(error)
@@ -47,3 +73,6 @@ export class SigninComponent implements OnInit{
   }
 
 }
+
+
+

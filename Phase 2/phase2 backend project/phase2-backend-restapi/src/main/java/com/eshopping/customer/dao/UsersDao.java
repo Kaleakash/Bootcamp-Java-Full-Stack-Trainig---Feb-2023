@@ -2,6 +2,7 @@ package com.eshopping.customer.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import com.eshopping.customer.bean.Users;
 import com.eshopping.resource.DbResource;
@@ -35,4 +36,31 @@ public class UsersDao {
 		
 		return 0;
 	}
+	
+	public boolean signIn(Users users) {
+		try {
+			PreparedStatement pstmt = con.prepareStatement("select * from users where emailid =? and password = ?");
+			pstmt.setString(1, users.getEmailid());
+			pstmt.setString(2, users.getPassword());
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				return true;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return false;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+

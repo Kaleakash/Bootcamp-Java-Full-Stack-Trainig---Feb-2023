@@ -1,5 +1,7 @@
 package com.eshopping.customer.service;
 
+
+
 import com.eshopping.customer.bean.Users;
 import com.eshopping.customer.dao.UsersDao;
 
@@ -11,6 +13,15 @@ public class UsersService {
 			return "Account Created successfully";
 		}else {
 			return "Account didn't create";
+		}
+	}
+	
+	public String signIn(Users users) {
+		
+		if(ud.signIn(users)) {
+			return "success";
+		}else {
+			return "failure";
 		}
 	}
 }
