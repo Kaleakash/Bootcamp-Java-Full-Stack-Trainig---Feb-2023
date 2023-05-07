@@ -13,6 +13,9 @@ categoryName varchar(50),
 categoryDescription varchar(250),
 categoryImageUrl blob); 
 
+alter table category modify categoryImageUrl longblob;
+alter table category modify categoryDescription varchar(500);
+
 -- Product table 
 
 create table product(pid int primary key auto_increment,
@@ -26,3 +29,17 @@ brand varchar(30),
 cid int, 
 thumbnail blob, foreign key(cid) references category(cid));
 
+
+create table users(
+		emailid varchar(30) primary key,
+		username varchar(30),
+		fullName varchar(30),
+		password varchar(30),
+		img blob,
+		contact bigint,
+        street varchar(30),
+		city varchar(30),
+		state varchar(30),
+		country varchar(30),
+		pincode bigint
+)
