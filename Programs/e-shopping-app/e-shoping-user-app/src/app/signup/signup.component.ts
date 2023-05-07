@@ -21,6 +21,7 @@ export class SignupComponent implements OnInit{
         street:[],
         city:[],
         state:[],
+        country:[],
         pincode:[]
       }),
       emailid:[],
@@ -39,9 +40,10 @@ export class SignupComponent implements OnInit{
     this.authService.signUp(user).subscribe({
       next:(result:any)=> {
           console.log(result);
+          alert(result);
       },
       error:(error:any)=> {
-
+          console.log(error);
       },
       complete:()=> {
         console.log("account created")

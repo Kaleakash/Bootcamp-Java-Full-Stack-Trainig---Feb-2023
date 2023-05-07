@@ -52,6 +52,26 @@ public class Users {
 	public void setContact(long contact) {
 		this.contact = contact;
 	}
+	@Override
+	public String toString() {
+		return "Users [username=" + username + ", fullName=" + fullName + ", address=" + address + ", emailid="
+				+ emailid + ", password=" + password + ", img=" + img + ", contact=" + contact + "]";
+	}
+	public Users(String username, String fullName, Address address, String emailid, String password, String img,
+			long contact) {
+		super();
+		this.username = username;
+		this.fullName = fullName;
+		this.address = address;
+		this.emailid = emailid;
+		this.password = password;
+		this.img = img;
+		this.contact = contact;
+	}
+	public Users() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
     
 }

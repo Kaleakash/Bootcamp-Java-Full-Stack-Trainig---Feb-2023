@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
+  private baseUrl:string ="http://localhost:8080/phase2-backend-restapi/UsersController";
   constructor(public http:HttpClient) { }  
   get isLoggedIn():Observable<boolean>{
     return this.loggedIn.asObservable();
@@ -17,12 +18,13 @@ export class AuthService {
   login() {
     this.loggedIn.next(true);
   }
+  
   signIn():Observable<User[]> {
     return this.http.get<User[]>("http://localhost:3000/users");    
   }
 
   signUp(user:any):Observable<any> {
-    return this.http.post("http://localhost:3000/users",user);
+    return this.http.post(this.baseUrl,user);
   }
 }
 
