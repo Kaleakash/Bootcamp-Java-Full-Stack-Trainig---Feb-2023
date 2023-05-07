@@ -61,7 +61,12 @@ public class ProductController extends HttpServlet {
 
 	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		PrintWriter pw = response.getWriter();
+		int pid  = Integer.parseInt(request.getParameter("pid"));
+		response.setContentType("text/plain");
+		String result = ps.deleteProduct(pid);
+		pw.print(result);
+		pw.flush();
 	}
 
 }

@@ -25,3 +25,4 @@ stock int,
 brand varchar(30),
 cid int, 
 thumbnail blob, foreign key(cid) references category(cid));
+

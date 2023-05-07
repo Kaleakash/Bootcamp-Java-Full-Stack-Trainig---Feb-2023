@@ -35,6 +35,18 @@ public class ProductDao {
 		}
 	}
 	
+	public int deleteProduct(int pid) {
+		try {
+			PreparedStatement pstmt = con.prepareStatement("delete from product where pid = ?");
+			pstmt.setInt(1, pid);
+			int res = pstmt.executeUpdate();
+			return res;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return 0;
+	}
+	
 	public List<Product> findAllProducts(){
 		List<Product> listOfProduct = new ArrayList<>();
 		try {

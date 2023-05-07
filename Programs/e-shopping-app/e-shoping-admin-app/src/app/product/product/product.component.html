@@ -16,8 +16,8 @@
                 <th>Thumbnail</th>
                 <th>Delete Product</th>
             </tr>
-            <tr *ngFor="let product of products">
-                <td>{{product.pid}}</td>
+            <tr *ngFor="let product of products;let i=index;">
+                <td>{{i+1}}</td>
                 <td>{{product.title}}</td>
                 <td>{{product.description}}</td>
                 <td>{{product.price}}</td>   

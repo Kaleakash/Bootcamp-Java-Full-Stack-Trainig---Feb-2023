@@ -61,4 +61,25 @@ export class CategoryComponent implements OnInit{
     })
     this.categoryForm.reset();
   }
+
+  deleteCategory(cid:any){
+    //console.log(cid);
+    this.categoryService.deleteCategory(cid).subscribe({
+      next:(result:any)=> {
+        console.log(result);
+      },
+      error:(error:any)=> {
+
+      },
+      complete:()=> {
+        this.loadCategories();
+      }
+    });
+
+  }
 }
+
+
+
+
+

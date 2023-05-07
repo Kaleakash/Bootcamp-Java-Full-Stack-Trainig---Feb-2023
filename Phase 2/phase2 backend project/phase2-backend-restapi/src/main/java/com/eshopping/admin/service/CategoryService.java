@@ -21,4 +21,12 @@ public class CategoryService {
 	public List<Category> findAllCategory() {
 		return cd.findAllCategory();
 	}
+	
+	public String deleteCategory(int cid) {
+		if(cd.deleteCategory(cid)>0) {
+			return "Category deleted successfully";
+		}else {
+			return "Category details didn't delete";
+		}
+	}
 }

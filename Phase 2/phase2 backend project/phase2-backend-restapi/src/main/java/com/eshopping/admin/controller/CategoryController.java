@@ -56,8 +56,14 @@ public class CategoryController extends HttpServlet {
 
 	
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		PrintWriter pw = response.getWriter();
+		int cid  = Integer.parseInt(request.getParameter("cid"));
+		response.setContentType("text/plain");
+		String result = cs.deleteCategory(cid);
+		pw.print(result);
+		pw.flush();
 	}
 
 }
  
+

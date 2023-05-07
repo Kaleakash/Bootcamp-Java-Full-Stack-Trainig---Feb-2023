@@ -6,12 +6,14 @@
                 <th>Category Name</th>
                 <th>Category Description</th>
                 <th>Image URL</th>
+                <th>Delete Category</th> 
             </tr>
-            <tr *ngFor="let category of categories">
-                  <td>{{category.cid}}</td>
+            <tr *ngFor="let category of categories;let i=index;">
+                  <td>{{i+1}}</td>
                   <td>{{category.categoryName}}</td>
                   <td>{{category.categoryDescription}}</td>
-                  <td><img src={{category.categoryImageUrl}} width="50px" height="50px"/></td>  
+                  <td><img src={{category.categoryImageUrl}} width="50px" height="50px"/></td> 
+                  <td><input type="button" value="delete rec" (click)="deleteCategory(category.cid)" class="btn btn-info"/></td>
             </tr>
         </table>
 

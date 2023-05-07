@@ -22,4 +22,12 @@ public class ProductService {
 	public List<Product> findAllProducts() {
 		return pd.findAllProducts();
 	}
+	
+	public String deleteProduct(int pid) {
+		if(pd.deleteProduct(pid)>0) {
+			return "Product deleted successfully";
+		}else {
+			return "Product details didn't delete";
+		}
+	}
 }

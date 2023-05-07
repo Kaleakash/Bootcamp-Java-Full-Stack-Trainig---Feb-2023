@@ -43,6 +43,19 @@ public class CategoryDao {
 		}
 		return 0;
 	}
+	
+	public int deleteCategory(int cid) {
+		try {
+			PreparedStatement pstmt = con.prepareStatement("delete from category where cid = ?");
+			pstmt.setInt(1, cid);
+			int res = pstmt.executeUpdate();
+			return res;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return 0;
+	}
+	
 	public List<Category> findAllCategory(){
 		List<Category> listOfCategory = new ArrayList<>();
 		try {
