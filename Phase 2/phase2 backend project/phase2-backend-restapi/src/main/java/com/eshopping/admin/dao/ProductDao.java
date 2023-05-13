@@ -18,6 +18,7 @@ public class ProductDao {
 	
 	public int storeProduct(Product product) {
 		try {
+			
 		PreparedStatement pstmt = con.prepareStatement("insert into product(title,description,price,discountPercentage,rating,stock,brand,cid,thumbnail) values(?,?,?,?,?,?,?,?,?)");
 		pstmt.setString(1, product.getTitle());
 		pstmt.setString(2, product.getDescription());
