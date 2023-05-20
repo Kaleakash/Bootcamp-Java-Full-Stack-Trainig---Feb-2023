@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OrderService {
 
-  public baseUrl:string="http://localhost:3000/orders";
+  //public baseUrl:string="http://localhost:3000/orders";
+  public baseUrl:string="http://localhost:8080/phase2-backend-restapi/OrdersController";
   constructor(public httpClient:HttpClient) { }
 
   orderPlaced(order:Order):Observable<any> {

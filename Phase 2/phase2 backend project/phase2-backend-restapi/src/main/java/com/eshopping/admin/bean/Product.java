@@ -11,7 +11,15 @@ public class Product {
       private float rating;
       private int stock;
       private String brand;
-      private int cid;    // FK
+      private int qty;
+      
+      public int getQty() {
+		return qty;
+	}
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
+	private int cid;    // FK
       private String thumbnail;
       private String images[];
 	public int getPid() {
@@ -105,7 +113,8 @@ public class Product {
 	public String toString() {
 		return "Product [pid=" + pid + ", title=" + title + ", description=" + description + ", price=" + price
 				+ ", discountPercentage=" + discountPercentage + ", rating=" + rating + ", stock=" + stock + ", brand="
-				+ brand + ", cid=" + cid + ", thumbnail=" + thumbnail + ", images=" + Arrays.toString(images) + "]";
+				+ brand + ", qty=" + qty + ", cid=" + cid + ", thumbnail=" + thumbnail + ", images="
+				+ Arrays.toString(images) + "]";
 	}
       
 }
