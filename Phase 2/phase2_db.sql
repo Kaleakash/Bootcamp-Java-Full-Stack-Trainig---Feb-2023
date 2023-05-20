@@ -60,6 +60,8 @@ totalAmount float,
 foreign key(email) references users(emailid)
 );
 
+select * from users;
+
 create table product_orders_info(
 poid int primary key auto_increment, 
 oid int, 
@@ -71,6 +73,11 @@ foreign key(pid) references product(pid)
 
 drop table product;
 drop table product_orders_info;
+select * from orders;
+select * from product_orders_info;
+select orderid from orders order by orderid desc;
+delete from orders;
+
 -- Stored Procedure 
 
 delimiter &
@@ -84,3 +91,6 @@ select @vname;
 drop procedure getProductName;
 
  -- 
+ select * from orders;
+ 
+ select distinct orderid  from orders o, product_orders_info poi, product p where o.orderid=poi.oid and poi.pid = p.pid 

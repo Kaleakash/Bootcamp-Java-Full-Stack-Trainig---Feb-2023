@@ -73,4 +73,30 @@ public class ProductDao {
 			}
 		return listOfProduct;
 	}
+	
+	public int decrementStock(int pid, int qty) {
+		try {
+			PreparedStatement pstmt = con.prepareStatement("update product set stock = stock - ? where pid = ?");
+			pstmt.setInt(1, qty);
+			pstmt.setInt(2,pid);
+			int res = pstmt.executeUpdate();
+			return res;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return 0;
+	}
+	
+	public int increaseStock(int pid, int qty) {
+		try {
+			PreparedStatement pstmt = con.prepareStatement("update product set stock = stock + ? where pid = ?");
+			pstmt.setInt(1, qty);
+			pstmt.setInt(2,pid);
+			int res = pstmt.executeUpdate();
+			return res;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return 0;
+	}
 }
