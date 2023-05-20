@@ -62,32 +62,34 @@ export class CartComponent implements OnInit{
   }
   paymentFlag:boolean = false;
   processedForPayment(){
+    console.log(this.user);
     this.paymentFlag=true;
     let orderDetails= new Order();
-    orderDetails.orderDate=new Date();
-    orderDetails.products=this.cartInfo;  // array value set 
+    orderDetails.orderDate=new Date().toISOString().substring(0,10);
+    console.log(orderDetails.orderDate);
+      orderDetails.products=[...this.cartInfo];  // array value set using spread operator we are copying cartInfo value into orderDetails 
     orderDetails.totalItems=this.cartInfo.length;
     orderDetails.shipmentCharges=100;
     orderDetails.totalAmount=this.totalPrice;
-    orderDetails.userId=this.user.id;
-    orderDetails.name= this.user.fullName;
-    orderDetails.email=this.user.email;
-    orderDetails.contact=this.user.contact;
+    // orderDetails.userId=this.user.id;
+    // orderDetails.name= this.user.fullName;
+    orderDetails.email=this.user.emailid;
+    // orderDetails.contact=this.user.contact;
     // console.log(this.cartInfo);
     // console.log(this.totalPrice);
     // console.log(this.user);
-    console.log(orderDetails);
-    this.orderService.orderPlaced(orderDetails).subscribe({
-      next:(result:any)=> {
-            console.log(result);
-      },
-      error:(error:any)=> {
-          console.log(error)
-      },
-      complete:()=> {
-          console.log("order placed successfully")
-      }
-    })   
+  console.log(orderDetails);
+    // this.orderService.orderPlaced(orderDetails).subscribe({
+    //   next:(result:any)=> {
+    //         console.log(result);
+    //   },
+    //   error:(error:any)=> {
+    //       console.log(error)
+    //   },
+    //   complete:()=> {
+    //       console.log("order placed successfully")
+    //   }
+    // })   
     this.cartInfo.splice(0,this.cartInfo.length); 
     this.totalPrice=0;
   }

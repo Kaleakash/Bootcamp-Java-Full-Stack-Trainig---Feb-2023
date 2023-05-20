@@ -1,20 +1,17 @@
 export class Order {
     constructor(
-        public id?:number,
-        public orderDate?:Date,
+        public orderid?:number,
+        public orderDate?:String,
         public orderStatus:string="pending",
-        public products?:Array<OrderProducts>,
+            public products?:Array<OrderProducts>,
         public totalItems?:number,
         public itemsSubTotal?:number,
         public shipmentCharges?:number,
         public totalAmount?:number,
         public paymentStatus?:string,
         public paymentMethodTitle?:string,
-        public userId?:string,
-        public name?:string,
         public email?:string,
-        public contact?:string,
-        public address?:string) {}
+        ) {}
 }
 export class OrderProducts{
     constructor(
