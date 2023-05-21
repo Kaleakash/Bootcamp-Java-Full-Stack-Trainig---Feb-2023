@@ -29,7 +29,14 @@ public class UsersDao {
 		pstmt.setString(10, users.getAddress().getCountry());
 		pstmt.setLong(11, users.getAddress().getPincode());
 		int res = pstmt.executeUpdate();
-		return res;
+		if(res>0) {
+			PreparedStatement pstmt1 = con.prepareStatement("insert into account(emailid,amount) values(?,?)");
+			pstmt1.setString(1, users.getEmailid());
+			pstmt1.setFloat(2, 2500);
+			int res1 = pstmt1.executeUpdate();
+			return res1;
+		}
+		
 		} catch (Exception e) {
 		System.out.println(e);
 		}

@@ -1,5 +1,5 @@
 <div class="container">
-    <div>
+    <div *ngIf="cartFlag">
     <table>
         <tr>
             <th>Title</th>
@@ -22,11 +22,13 @@
             <th>{{totalPrice}}</th>
         </tr>
         <tr>
-            <td><input type="button" value="Procced for payment" (click)="processedForPayment()"/></td>
+            <td><input type="button" value="Do Payment" (click)="doPayment()"/></td>
         </tr>
     </table>
     </div>
     <div *ngIf="paymentFlag">
             <h2>We will add debit/credit card details</h2>
+
+            <input type="button" value="Procced for payment" (click)="processedForPayment()"/>
     </div>
 </div>

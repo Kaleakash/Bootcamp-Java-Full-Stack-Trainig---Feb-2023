@@ -92,5 +92,16 @@ drop procedure getProductName;
 
  -- 
  select * from orders;
+ select * from product_orders_info where oid =7;
+ select *  from orders o, product_orders_info poi, product p where o.orderid=poi.oid and poi.pid = p.pid 
  
- select distinct orderid  from orders o, product_orders_info poi, product p where o.orderid=poi.oid and poi.pid = p.pid 
+ 
+ create table account(
+ accno int primary key auto_increment, 
+ amount float, 
+ emailid varchar(30),
+ foreign key(emailid) references users(emailid)
+ )
+ insert into account(amount,emailid) values(2500,'john.snow@gmail.com');
+ 
+ 

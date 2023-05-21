@@ -36,7 +36,7 @@ export class CartComponent implements OnInit{
 
       })
   }
-
+  cartFlag:boolean = true;
   totalPrice:number =0;
   increment(cart:any,i:number){
     //console.log(cart+" "+i)
@@ -63,7 +63,7 @@ export class CartComponent implements OnInit{
   paymentFlag:boolean = false;
   processedForPayment(){
     console.log(this.user);
-    this.paymentFlag=true;
+    
     let orderDetails= new Order();
     orderDetails.orderDate=new Date().toISOString().substring(0,10);
     console.log(orderDetails.orderDate);
@@ -88,5 +88,8 @@ export class CartComponent implements OnInit{
     this.totalPrice=0;
   }
   
-  
+  doPayment(){
+    this.cartFlag=false;
+    this.paymentFlag=true;
+  }  
 }

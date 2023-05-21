@@ -15,4 +15,8 @@ export class OrderService {
   orderPlaced(order:Order):Observable<any> {
     return this.httpClient.post(this.baseUrl,order);
   }
+
+  viewOrdersByUser(email:any):Observable<any> {
+    return this.httpClient.get(this.baseUrl+"?email="+email);
+  }
 }

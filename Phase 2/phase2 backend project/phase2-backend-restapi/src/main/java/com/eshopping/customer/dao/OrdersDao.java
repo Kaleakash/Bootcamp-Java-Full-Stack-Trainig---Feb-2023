@@ -63,6 +63,14 @@ public class OrdersDao {
 		}
 	}
 	
+	
+	public Object storeTemplate(String tableName,String numberOfColumn, String allColumns[]) {
+		
+		
+		return null;
+	}
+	
+	
 	public List<Orders> getAllOrderDetails() {
 		List<Orders> listOfOrders = new ArrayList<Orders>();	
 		try {
@@ -91,10 +99,8 @@ public class OrdersDao {
 								p.setStock(rs2.getInt(7));
 								p.setBrand(rs2.getNString(8));
 								p.setCid(rs2.getInt(9));
-								System.out.println("I Came Here ");
-							}
+															}
 							listProduct.add(p);
-							System.out.println(listProduct.size());
 					}
 				od.setProducts(listProduct);	
 				od.setEmail(rs.getString(2));
@@ -140,10 +146,9 @@ public List<Orders> getAllOrdersByUsers(String email) {
 							p.setStock(rs2.getInt(7));
 							p.setBrand(rs2.getNString(8));
 							p.setCid(rs2.getInt(9));
-							System.out.println("I Came Here ");
+							
 						}
 						listProduct.add(p);
-						System.out.println(listProduct.size());
 				}
 			od.setProducts(listProduct);	
 			od.setEmail(rs.getString(2));

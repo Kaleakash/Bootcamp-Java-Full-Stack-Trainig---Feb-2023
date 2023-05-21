@@ -40,6 +40,7 @@ public class OrdersController extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		response.setContentType("application/json");
 		String email = request.getParameter("email");
+		System.out.println(email);
 		if(email==null) {
 			List<Orders> listOfOrders = os.getAllOrders();
 			Gson gson = new Gson();
@@ -51,6 +52,8 @@ public class OrdersController extends HttpServlet {
 			Gson gson = new Gson();
 			String jsonResponse = gson.toJson(listOfOrders);
 			pw.print(jsonResponse);
+			System.out.println("All Orders details ");
+			System.out.println(listOfOrders);
 			pw.flush();
 		}
 
