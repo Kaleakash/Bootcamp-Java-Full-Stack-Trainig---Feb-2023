@@ -1,6 +1,7 @@
 package com.eshopping.customer.bean;
 
 import java.util.Arrays;
+import java.util.List;
 
 import com.eshopping.admin.bean.Product;
 
@@ -12,12 +13,13 @@ private String email;
 private int shipmentCharges;
 private int totalItems;
 private float totalAmount;
-private Product[] products;
+private List<Product> products;
 
-public Product[] getProducts() {
+
+public List<Product> getProducts() {
 	return products;
 }
-public void setProducts(Product[] products) {
+public void setProducts(List<Product> products) {
 	this.products = products;
 }
 public int getOrderid() {
@@ -62,11 +64,12 @@ public float getTotalAmount() {
 public void setTotalAmount(float totalAmount) {
 	this.totalAmount = totalAmount;
 }
+
 @Override
 public String toString() {
 	return "Orders [orderid=" + orderid + ", orderDate=" + orderDate + ", orderStatus=" + orderStatus + ", email="
 			+ email + ", shipmentCharges=" + shipmentCharges + ", totalItems=" + totalItems + ", totalAmount="
-			+ totalAmount + ", products=" + Arrays.toString(products) + "]";
+			+ totalAmount + ", products=" + products + "]";
 }
 public Orders() {
 	super();
