@@ -3,6 +3,7 @@ import { CartService } from './cart.service';
 import { Cart } from './cart';
 import { Order } from '../order/order';
 import { OrderService } from '../order/order.service';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-cart',
@@ -13,9 +14,11 @@ export class CartComponent implements OnInit{
 
   cartInfo:Array<Cart>=[];
   user:any;
-  constructor(public cartService:CartService,public orderService:OrderService){
+  constructor(public cartService:CartService,public orderService:OrderService,
+    public accountService:AccountService){
 
   }
+  bankBalance:any;
   ngOnInit(): void {
     let obj = sessionStorage.getItem("user");
     if(obj!= null){
@@ -34,6 +37,17 @@ export class CartComponent implements OnInit{
             
         }
 
+      })
+      this.accountService.findBalane(this.user.emailid).subscribe({
+        next:(result:any)=> {
+          this.bankBalance=eval(result);
+        },
+        error:(error:any)=> {
+
+        },
+        complete:()=> {
+          console.log("balance retreive")
+        }
       })
   }
   cartFlag:boolean = true;
@@ -87,9 +101,17 @@ export class CartComponent implements OnInit{
     this.cartInfo.splice(0,this.cartInfo.length); 
     this.totalPrice=0;
   }
-  
+  b1:string ="Procced for payment";  
+  flag:boolean = false;
   doPayment(){
     this.cartFlag=false;
     this.paymentFlag=true;
+    if(this.bankBalance>=this.totalPrice){
+      this.b1="Proceced for payment"
+      this.flag = false;
+    }else {
+      this.b1="InSufficient Amount"
+      this.flag=true;
+    }
   }  
 }

@@ -28,7 +28,8 @@
     </div>
     <div *ngIf="paymentFlag">
             <h2>We will add debit/credit card details</h2>
-
-            <input type="button" value="Procced for payment" (click)="processedForPayment()"/>
+            <h2>Bank Balance amount is {{bankBalance}}</h2>
+            <h2>Total Payment {{totalPrice}}</h2>
+            <input type="button" [value]="b1" (click)="processedForPayment()" [disabled]="flag"/>
     </div>
 </div>
