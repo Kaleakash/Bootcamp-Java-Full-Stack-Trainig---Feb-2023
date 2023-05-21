@@ -70,19 +70,18 @@ public class OrdersDao {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				Orders od = new Orders();
-					od.setOrderid(rs.getInt(1));	//7 
-			PreparedStatement pstmt1 = con.prepareStatement("select * from product_orders_info where oid = ?");
+				od.setOrderid(rs.getInt(1));
+				PreparedStatement pstmt1 = con.prepareStatement("select * from product_orders_info where oid = ?");
 				pstmt1.setInt(1, od.getOrderid());
 				ResultSet rs1 = pstmt1.executeQuery();
+				List<Product> listProduct= new ArrayList<Product>();
 					while(rs1.next()) {
 						int pid = rs1.getInt(3);
-						
 						PreparedStatement pstmt2 = con.prepareStatement("select * from product where pid = ?");
 						pstmt2.setInt(1, pid);
 						ResultSet rs2 = pstmt2.executeQuery();
-					List<Product> listProduct = new ArrayList<Product>();
-							while(rs2.next()) {
-								Product p = new Product();
+						Product p = new Product();
+							if(rs2.next()) {
 								p.setPid(rs2.getInt(1));
 								p.setTitle(rs2.getString(2));
 								p.setDescription(rs2.getString(3));
@@ -92,23 +91,25 @@ public class OrdersDao {
 								p.setStock(rs2.getInt(7));
 								p.setBrand(rs2.getNString(8));
 								p.setCid(rs2.getInt(9));
-								listProduct.add(p);
-								//p.setImages(rs.getBlob(10).toString());
+								System.out.println("I Came Here ");
 							}
-							od.setProducts(listProduct);
+							listProduct.add(p);
+							System.out.println(listProduct.size());
 					}
+				od.setProducts(listProduct);	
 				od.setEmail(rs.getString(2));
 				od.setOrderStatus(rs.getString(3));
 				od.setEmail(rs.getString(4));
 				od.setTotalItems(rs.getInt(6));
 				od.setTotalAmount(rs.getFloat(7));
-				listOfOrders.add(od);		// 
+				listOfOrders.add(od);
 			}
 			} catch (Exception e) {
 					System.out.println(e);
 			}
 			return listOfOrders;
-	}
+		}
+
 	
 public List<Orders> getAllOrdersByUsers(String email) {
 	List<Orders> listOfOrders = new ArrayList<Orders>();	
@@ -122,15 +123,14 @@ public List<Orders> getAllOrdersByUsers(String email) {
 			PreparedStatement pstmt1 = con.prepareStatement("select * from product_orders_info where oid = ?");
 			pstmt1.setInt(1, od.getOrderid());
 			ResultSet rs1 = pstmt1.executeQuery();
+			List<Product> listProduct= new ArrayList<Product>();
 				while(rs1.next()) {
 					int pid = rs1.getInt(3);
-					
 					PreparedStatement pstmt2 = con.prepareStatement("select * from product where pid = ?");
 					pstmt2.setInt(1, pid);
 					ResultSet rs2 = pstmt2.executeQuery();
-					List<Product> listProduct = new ArrayList<Product>();
-						while(rs2.next()) {
-							Product p = new Product();
+					Product p = new Product();
+						if(rs2.next()) {
 							p.setPid(rs2.getInt(1));
 							p.setTitle(rs2.getString(2));
 							p.setDescription(rs2.getString(3));
@@ -140,11 +140,12 @@ public List<Orders> getAllOrdersByUsers(String email) {
 							p.setStock(rs2.getInt(7));
 							p.setBrand(rs2.getNString(8));
 							p.setCid(rs2.getInt(9));
-							listProduct.add(p);
-							//p.setImages(rs.getBlob(10).toString());
+							System.out.println("I Came Here ");
 						}
-						od.setProducts(listProduct);
+						listProduct.add(p);
+						System.out.println(listProduct.size());
 				}
+			od.setProducts(listProduct);	
 			od.setEmail(rs.getString(2));
 			od.setOrderStatus(rs.getString(3));
 			od.setEmail(rs.getString(4));
