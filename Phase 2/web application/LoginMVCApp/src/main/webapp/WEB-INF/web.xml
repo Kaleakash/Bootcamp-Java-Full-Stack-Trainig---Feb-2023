@@ -44,4 +44,14 @@
     <servlet-name>GetProductInfo</servlet-name>
     <url-pattern>/GetProductInfo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductUpdateController</display-name>
+    <servlet-name>ProductUpdateController</servlet-name>
+    <servlet-class>com.conroller.ProductUpdateController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductUpdateController</servlet-name>
+    <url-pattern>/ProductUpdateController</url-pattern>
+  </servlet-mapping>
 </web-app>

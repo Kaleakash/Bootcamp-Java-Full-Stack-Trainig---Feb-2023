@@ -89,7 +89,7 @@ export class CartComponent implements OnInit{
     console.log(orderDetails);
     this.orderService.orderPlaced(orderDetails).subscribe({
       next:(result:any)=> {
-            console.log(result);
+            alert(result);
       },
       error:(error:any)=> {
           console.log(error)
@@ -100,6 +100,9 @@ export class CartComponent implements OnInit{
     })   
     this.cartInfo.splice(0,this.cartInfo.length); 
     this.totalPrice=0;
+    this.cartFlag=false;
+    this.paymentFlag=false;
+    
   }
   b1:string ="Procced for payment";  
   flag:boolean = false;
