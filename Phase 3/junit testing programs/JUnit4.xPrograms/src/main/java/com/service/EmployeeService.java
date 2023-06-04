@@ -14,6 +14,7 @@ public class EmployeeService {
 	
 	public List<Employee> getEmployees() {
 		List<Employee> listOfEmp = new ArrayList<Employee>();
+		listOfEmp.clear();
 		listOfEmp.add(new Employee(1, "Lokesh", 14000));
 		listOfEmp.add(new Employee(2, "Steven", 16000));
 		listOfEmp.add(new Employee(3, "Ajay", 19000));

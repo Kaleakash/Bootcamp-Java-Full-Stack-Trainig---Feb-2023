@@ -32,6 +32,7 @@ public class EmployeeServiceTest {
 		assertEquals(100, emp.getId());
 		assertEquals("Ravi", emp.getName());
 		assertEquals(12000, emp.getSalary(),0.0); 
+		//assertEq
 	}
 
 	@Test

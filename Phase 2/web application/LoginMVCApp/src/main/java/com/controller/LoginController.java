@@ -15,7 +15,7 @@ import com.service.LoginService;
 
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    //int avl=1;   
    
     public LoginController() {
         super();
@@ -29,11 +29,11 @@ public class LoginController extends HttpServlet {
 		String emailid = request.getParameter("emailid");
 		String password = request.getParameter("password");
 		
-		Login ll = new Login();
+				Login ll = new Login();
 		ll.setEmailid(emailid);
 		ll.setPassword(password);
 		
-		LoginService ls = new LoginService();
+				LoginService ls = new LoginService();
 		String result = ls.sigIn(ll);
 		RequestDispatcher rd1 = request.getRequestDispatcher("home.jsp");	
 		RequestDispatcher rd2 = request.getRequestDispatcher("login.jsp");
