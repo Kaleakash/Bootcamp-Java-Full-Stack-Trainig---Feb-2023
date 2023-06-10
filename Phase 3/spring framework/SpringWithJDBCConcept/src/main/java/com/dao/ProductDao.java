@@ -9,13 +9,15 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.bean.Product;
 
 @Repository		// @Repository is dao layer specific annotation 
 public class ProductDao {
-
+	
+	
 	@Autowired
 	DataSource ds;	// to achieve DataSource concept before spring framweork 
 						// we were configure database details in application server 

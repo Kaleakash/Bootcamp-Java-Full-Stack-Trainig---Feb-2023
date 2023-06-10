@@ -17,5 +17,9 @@ id="ds" scope="singleton">
 	<property name="password" value="root@123"></property>
 </bean>
 
-
+<bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate" scope="singleton"
+autowire="byType">
+<!--  	<property name="dataSource" ref="ds"></property> -->
+</bean>
 </beans>
+
