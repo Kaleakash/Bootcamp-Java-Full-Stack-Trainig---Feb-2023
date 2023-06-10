@@ -38,9 +38,11 @@ public class ProductService {
 		}
 	}
 	public List<Map<String, Object>> findAllProductListMap() {
+		
 		return productDao.findProductUsingListMap();
 	}
 	public List<Product> findAllProducts() {
+		
 		return productDao.findAllProductObject();
 	}
 	
