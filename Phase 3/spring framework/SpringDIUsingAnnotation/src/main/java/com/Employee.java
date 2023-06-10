@@ -1,10 +1,21 @@
 package com;
 
-public class Employee {
-private int id;
-private String name;
-private float salary;
-private Address add;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component 					// <bean class="com.Employee"></bean>
+@Scope("prototype")
+public class Employee {		// by default id is class name using camel naming 
+@Value(value = "100")
+private int id;				// if class contains one word then lower case if class
+@Value(value = "Ramesh")
+private String name;		// more than one word then 2nd word onward first letter upper case
+@Value(value = "34000")
+private float salary;		// Employee then id is employee 
+@Autowired
+private Address add;		// EmployeeDetails then id employeeDetails  
 
 	public Employee() {
 		System.out.println("object created...");
