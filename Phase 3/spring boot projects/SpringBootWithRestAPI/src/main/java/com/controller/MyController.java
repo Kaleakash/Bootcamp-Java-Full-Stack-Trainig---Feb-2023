@@ -15,7 +15,6 @@ public class MyController {
 	public String sayHello() {
 		return "Welcome to Spring boot with REst API";
 	}
-	
 	// http://localhost:8080/sayHTML
 	
 	@RequestMapping(value = "sayHTML",method = RequestMethod.GET,produces = MediaType.TEXT_HTML_VALUE)
