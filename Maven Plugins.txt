@@ -215,6 +215,20 @@ spring MVC with Hibernate configuration
 	
 </bean>
 
+spring MVC with jpa configuration 
+
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+	<property name="url" value="jdbc:oracle:thin:@localhost:1521/ORCL"></property>
+	<property name="username" value="system"></property>
+	<property name="password" value="Welcome123"></property>
+</bean>
+<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+<property name="dataSource" ref="ds"></property>
+<property name="jpaVendorAdapter" ref="jpaVendor"></property>
+<property name="packagesToScan" value="com.bean"></property>
+</bean>
+
 
 Two dependenices for convert java object to json or xml 
 
