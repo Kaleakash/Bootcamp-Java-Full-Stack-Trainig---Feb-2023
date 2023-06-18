@@ -17,4 +17,39 @@ public class EmployeeService {
 	public List<Employee> findAllEmployee() {
 		return employeeDao.findAllEmployee();
 	}
+	
+	public String findEmployeeById(int id) {
+		Employee emp = employeeDao.findEmployee(id);
+		if(emp==null) {
+			return "Employee record not present with id as "+id;
+		}else {
+			return emp.toString();
+		}
+	}
+	
+	public List<Employee> findEmployeeBySalary(float salary){
+		return employeeDao.findEmployeeBySalary(salary);
+	}
+	
+	public String storeEmployee(Employee emp) {
+			if(employeeDao.storeEmployee(emp)) {
+				return "Employee record stored in database successfully";
+			}else {
+				return "Employee record din't store ";
+			}
+	}
+	
+	public String updateEmployeeSalary(Employee emp) {
+		return employeeDao.updateEmployeeSalary(emp);
+	}
+	
+	public String updateEmployeeDetails(Employee emp) {
+		return employeeDao.updateEmployee(emp);
+	}
+	
+	public String deleteEmployeeRecord(int id) {
+		return employeeDao.deleteEmployeeRecord(id);
+	}
 }
+
+
