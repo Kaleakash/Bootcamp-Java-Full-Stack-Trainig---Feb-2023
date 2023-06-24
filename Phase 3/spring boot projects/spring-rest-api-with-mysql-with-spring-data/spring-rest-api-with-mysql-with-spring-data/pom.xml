@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.12</version>
+		<version>2.7.13</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>SpringBootRestAPIWithData</artifactId>
+	<artifactId>spring-rest-api-with-mysql-with-spring-data</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBootRestAPIWithData</name>
+	<name>spring-rest-api-with-mysql-with-spring-data</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

@@ -383,6 +383,17 @@ jwt token
 	</dependency>
 
 
+
+database details in application.properties file 
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+spring.datasource.username=root
+spring.datasource.password=root@123
+spring.jpa.hibernate.ddl-auto=update 
+
+
+
 database details in application.properties file 
 
 jwt.secret = myKey
