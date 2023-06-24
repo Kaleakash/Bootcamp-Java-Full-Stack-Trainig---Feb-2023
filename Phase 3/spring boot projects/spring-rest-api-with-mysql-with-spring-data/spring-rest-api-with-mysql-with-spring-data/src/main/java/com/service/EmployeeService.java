@@ -15,10 +15,23 @@ public class EmployeeService {
 	@Autowired
 	EmployeeRepository employeeRepository;
 	
+	public List<Employee> findEmployeeBySalary(float salary){
+		return employeeRepository.findBySalary(salary);
+	}
+	
 	public List<Employee> findAllEmployee() {
 		return employeeRepository.findAll();  // select * from employee sql 
 	}										// select e from Employee e  JPQL 
 	
+	public Employee findEmployee(int id) {
+		Optional<Employee> result = employeeRepository.findById(id);
+		if(result.isPresent()) {
+			Employee e = result.get();
+			return e;
+		}else {
+			return null;
+		}
+	}
 	
 	public String storeEmployee(Employee emp) {
 		Optional<Employee> result = employeeRepository.findById(emp.getId());

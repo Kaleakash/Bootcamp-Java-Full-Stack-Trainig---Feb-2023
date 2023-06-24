@@ -28,6 +28,15 @@ public class EmployeeController {
 		return employeeService.findAllEmployee();
 	}
 	
+	@GetMapping(value = "findEmployeeBySalary/{salary}")
+	public List<Employee> findEmployeeBySalary(@PathVariable("salary") float salary){
+		return employeeService.findEmployeeBySalary(salary);
+	}
+	
+	@GetMapping(value = "findEmployee/{id}")
+	public Employee findEmployee(@PathVariable("id") int id) {
+		return employeeService.findEmployee(id);
+	}
 	@PostMapping(value = "store",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String storeEmployee(@RequestBody Employee emp) {
 		return employeeService.storeEmployee(emp);
