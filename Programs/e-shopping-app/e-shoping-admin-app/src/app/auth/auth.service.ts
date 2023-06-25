@@ -47,7 +47,8 @@ export class AuthService {
   // }
 
   signIn(admin:Admin):Observable<String> {
-    return this.http.post("http://localhost:8080/phase2-backend-restapi/AdminController",admin,{responseType:'text'})
+    //return this.http.post("http://localhost:8080/phase2-backend-restapi/AdminController",admin,{responseType:'text'})
+    return this.http.post("http://localhost:8181/phase3/admin/signIn",admin,{responseType:'text'})
   }
 
 }
