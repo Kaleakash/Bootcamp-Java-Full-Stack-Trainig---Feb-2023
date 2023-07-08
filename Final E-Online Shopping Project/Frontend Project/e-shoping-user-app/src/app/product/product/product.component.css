@@ -1,0 +1,11 @@
+.myClass{
+    border: 2px solid red;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: azure;
+    width: 180px;
+}
+a:hover{
+    cursor: pointer;
+}

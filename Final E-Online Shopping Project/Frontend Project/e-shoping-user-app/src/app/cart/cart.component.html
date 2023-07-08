@@ -1,0 +1,35 @@
+<div class="container">
+    <div *ngIf="cartFlag">
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Increment</th>
+            <th>Decrement</th>
+            <th>Remove</th>
+        </tr>
+        <tr *ngFor="let cart of cartInfo;let i=index;">
+                <td>{{cart.title}}</td>
+                <td>{{cart.price}}</td>
+                <td>{{cart.qty}}</td>
+                <td><a (click)="increment(cart,i)"><img src="https://cdn-icons-png.flaticon.com/512/10263/10263093.png" width="50px" height="50px"></a></td>
+                <td><a (click)="decrement(cart,i)"><img src="https://cdn-icons-png.flaticon.com/512/2569/2569198.png" width="50px" height="50px"></a></td>
+                <td><a (click)="remove(cart,i)"><img src="https://cdn-icons-png.flaticon.com/512/9283/9283917.png" width="50px" height="50px"></a></td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <th>{{totalPrice}}</th>
+        </tr>
+        <tr>
+            <td><input type="button" value="Do Payment" (click)="doPayment()"/></td>
+        </tr>
+    </table>
+    </div>
+    <div *ngIf="paymentFlag">
+            <h2>We will add debit/credit card details</h2>
+            <h2>Bank Balance amount is {{bankBalance}}</h2>
+            <h2>Total Payment {{totalPrice}}</h2>
+            <input type="button" [value]="b1" (click)="processedForPayment()" [disabled]="flag"/>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>All Users</h2>
+    <table>
+            <tr>
+                <th>Profile Image</th>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Full Name</th>
+                <th>Emailid</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Pincode</th>
+                <th>Contact</th>            
+            </tr>
+            <tr *ngFor="let user of users">
+                <td><img src={{user.img}} width="100px" height="100px"></td>
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.fullName}}</td>
+                <td>{{user.emailid}}</td>
+                <td>{{user.address.street}}</td>
+                <td>{{user.address.city}}</td>
+                <td>{{user.address.state}}</td>
+                <td>{{user.address.country}}</td>
+                <td>{{user.address.pincode}}</td>
+                <td>{{user.contact}}</td>
+            </tr>
+    </table>
+</div>

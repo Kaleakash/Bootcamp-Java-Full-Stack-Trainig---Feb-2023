@@ -1,0 +1,21 @@
+<div>
+
+    <h2>E - Shopping Customer App</h2>
+    <div>
+        <div *ngIf="!flag;else temp;">
+            <a routerLink="aboutus">About Us</a> |
+            <a routerLink="contactus">Contact Us</a> |
+            <a routerLink="login">Login</a> |
+        </div>   
+        <ng-template #temp>
+            <a routerLink="/home/product">Product Details</a> |
+            <a routerLink="/home/viewCart">View Cart Details</a> |
+            <a routerLink="/home/viewOrders">View Orders Details</a> |
+            <a routerLink="/home/logout">Logout</a>
+        </ng-template>
+            
+
+    </div>
+    <router-outlet></router-outlet>
+
+</div>

@@ -1,0 +1,46 @@
+
+    <!-- <h2>All Products</h2>
+    <table>
+            <tr>
+                <th>PId</th>
+                <th>PName</th>
+                <th>Description</th>
+                <th><a (click)="sortByPrice()">Price</a></th>
+                <th>Discount</th>
+                <th>Rating</th>
+                <th>Stock</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Thumbnail</th>
+                <td>Delete Product</td>
+            </tr>
+            <tr *ngFor="let product of products">
+                <td>{{product.id}}</td>
+                <td>{{product.title}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price}}</td>   
+                <td>{{product.discountPercentage}}</td>
+                <td>{{product.rating}}</td>
+                <td>{{product.stock}}</td>
+                <td>{{product.brand}}</td>
+                <td>{{product.category}}</td>
+                <td><img src={{product.thumbnail}} width="100px" height="100px"/></td>
+                <td><input type="button" value="Delete Product" (click)="deleteProduct(product)"/></td>
+            </tr>
+    </table> -->
+<div class="container">
+    <div class="row">
+        <div *ngFor="let product of products" class="col-2 myClass">
+            <img src={{product.thumbnail}} width="150px" height="120px"/>
+            <span>{{product.title}} {{product.price}}</span>
+            <div>
+            <a (click)="addToCart(product)">
+                <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" width="40px" height="40px"/>
+            </a>
+            <a (click)="addToWishlist(product)">
+            <img src="https://cdn-icons-png.flaticon.com/512/2767/2767018.png" width="40px" height="40px"/>
+            </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div>
+    <table class="table">
+        <tr>
+           <th>OrderId</th> 
+        </tr>
+        <tr *ngFor="let order of orders">
+            <td>{{order | json}}</td>
+        </tr>
+    </table>
+</div>
