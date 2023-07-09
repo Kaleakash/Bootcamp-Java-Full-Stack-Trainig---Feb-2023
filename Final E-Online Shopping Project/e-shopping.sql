@@ -1,5 +1,7 @@
 use phase3_shopping_app;
 
+desc admin;
+
 show tables;
 
 select * from admin;
@@ -35,4 +37,31 @@ brand varchar(30),
 cid int, 
 thumbnail longblob, foreign key(cid) references category(cid));
 
+desc product;
 
+select * from product;
+drop table product;
+delete from product where pid=1;
+
+select * from category;
+
+
+create database phase3_shopping_app_customer_db;
+
+use phase3_shopping_app_customer_db;
+
+create table users(
+		emailid varchar(30) primary key,
+		username varchar(30),
+		fullName varchar(30),
+		password varchar(250),
+		img longblob,
+		contact bigint,
+	        street varchar(30),
+		city varchar(30),
+		state varchar(30),
+		country varchar(30),
+		pincode bigint
+);
+
+drop table users;

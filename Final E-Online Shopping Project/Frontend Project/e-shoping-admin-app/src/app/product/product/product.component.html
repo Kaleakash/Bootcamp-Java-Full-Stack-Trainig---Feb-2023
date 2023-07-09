@@ -15,6 +15,7 @@
                 <th>CId</th>
                 <th>Thumbnail</th>
                 <th>Delete Product</th>
+                <th>Update Prouct</th>
             </tr>
             <tr *ngFor="let product of products;let i=index;">
                 <td>{{i+1}}</td>
@@ -32,8 +33,16 @@
                     <img src="https://cdn5.vectorstock.com/i/1000x1000/70/04/delete-icon-vector-3917004.jpg"
                     width="50px" height="50px"/>
                    </a> 
-                    <!-- <input type="button" value="Delete Product" (click)="deleteProduct(product)"/></td> -->
+                </td>
+                <td>
+                  <a (click)="updateProduct(product,updateProductModel)">
+                   <img src="data:image/jpeg;base64,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"
+                   width="50px" height="50px"/>
+                  </a> 
+               </td>   
+                    <!-- <input type="button" value="Delete Product" (click)="deleteProduct(product)"/> -->
             </tr>
+
     </table>
 
     <ng-template #addProduct let-modal class="modal-dialog">
@@ -139,4 +148,104 @@
        
 </ng-template>
 
+
+<ng-template #updateProductModel let-modal class="modal-dialog">
+  <div class="model-header">
+          <h2>Update Product Details</h2>
+  </div>
+  <div class="model-body">
+      <form [formGroup]="productForm" (ngSubmit)="updateProductFromDb()">
+          <div class="row">
+                <div class="col-3">
+                     <label>Title</label>
+                </div>
+                <div class="col-3">
+                  <input type="text" formControlName="title"/>
+                </div>  
+              
+                <div class="col-3">
+                  <label>description</label>
+             </div>
+             
+             <div class="col-3">
+               <input type="text" formControlName="description"/>
+             </div>  
+          </div>
+
+          
+        <div class="row">
+          <div class="col-3">
+               <label>price</label>
+          </div>
+          <div class="col-3">
+            <input type="text" formControlName="price"/>
+          </div>  
+
+
+          <div class="col-3">
+              <label>discountPercentage</label>
+         </div>
+         <div class="col-3">
+           <input type="text" formControlName="discountPercentage"/>
+         </div>  
+       </div>  
+
+
+       <div class="row">
+          <div class="col-3">
+               <label>rating</label>
+          </div>
+          <div class="col-3">
+            <input type="text" formControlName="rating"/>
+          </div>  
+
+
+          <div class="col-3">
+              <label>stock</label>
+         </div>
+         <div class="col-3">
+           <input type="text" formControlName="stock"/>
+         </div>  
+       </div>  
+
+       <div class="row">
+          <div class="col-3">
+               <label>brand</label>
+          </div>
+          <div class="col-3">
+            <input type="text" formControlName="brand"/>
+          </div>  
+
+
+          <div class="col-3">
+              <label>category</label>
+         </div>
+         <div class="col-3">
+          <input type="text" formControlName="category"/>
+         </div>  
+       </div>  
+
+       <div class="row">
+          <div class="col-3">
+               <label>thumbnail</label>
+          </div>
+          <div class="col-3">
+            <input type="text" formControlName="thumbnail"/>
+          </div>  
+       </div> 
+
+       <div class="row">
+          <div class="col-3">
+           <input type="submit" value="Update Product" class="btn btn-outline-primary"/>
+          </div>
+          <div class="col-3">
+              <input type="button" value="Close" (click)="modal.close('close')" class="btn btn-outline-dark"/>
+          </div>  
+       </div>
+
+      </form>
+      
+  </div>
+ 
+</ng-template>
 </div>

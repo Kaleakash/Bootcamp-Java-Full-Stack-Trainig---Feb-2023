@@ -29,4 +29,9 @@ export class ProductService {
     return this.httpClient.post(this.baseUrl+"/store",product);
   }
 
+  updateProduct(product:Product):Observable<any> {
+    return this.httpClient.put(this.baseUrl+"/update",product,{responseType:'text'}); 
+  }
+
+  
 }

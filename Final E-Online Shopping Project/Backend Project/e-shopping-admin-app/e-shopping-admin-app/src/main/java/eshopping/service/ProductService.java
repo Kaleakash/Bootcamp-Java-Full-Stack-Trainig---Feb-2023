@@ -36,4 +36,19 @@ public class ProductService {
 			
 	}
 	
+	public String updateProduct(Product product) {
+		Optional<Product> result = productRepository.findById(product.getPid());
+		if(result.isPresent()) {
+			Product p  = result.get();
+			
+			p.setStock(product.getStock());
+			p.setPrice(product.getPrice());
+			p.setDiscountPercentage(product.getDiscountPercentage());
+			p.setThumbnail(product.getThumbnail());
+			productRepository.saveAndFlush(p);
+			return "Product details updated successfully";
+		}else {
+			return "Product not present";
+		}
+	}
 }

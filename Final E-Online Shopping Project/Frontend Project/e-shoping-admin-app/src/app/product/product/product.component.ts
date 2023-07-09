@@ -20,6 +20,7 @@ export class ProductComponent implements OnInit{
   }
   ngOnInit(): void {
     this.productForm=this.formBuilder.group({
+      pid:[""],
       title:[""],
       description:[""],
       price:[""],
@@ -119,4 +120,49 @@ export class ProductComponent implements OnInit{
 
     this.productForm.reset();
   }
+
+  updateProduct(product,updateProductModal){
+    console.log(product);
+    let productInfo:any = this.categories.find(c=>c.cid==product.cid);
+    console.log(productInfo);
+    this.productForm.patchValue({
+      pid:product.pid,
+      title:product.title,
+      description:product.description,
+      price:product.price,
+      discountPercentage:product.discountPercentage,
+      rating:product.rating,
+      stock:product.stock,
+      brand:product.brand,
+      category:productInfo.categoryName,
+      thumbnail:product.thumbnail      
+    })     
+    this.model.open(updateProductModal,{size:"lg"});    
+  }
+
+  updateProductFromDb(){
+    let product = this.productForm.value;
+    
+    
+    let productInfo = this.categories.find(c=>c.categoryName==product.category)
+    console.log(productInfo);
+    product.cid = productInfo?.cid;
+    this.productService.updateProduct(product).subscribe({
+      next:(data:any)=> {
+          alert(data);
+          console.log(data);
+      },
+      error:(error:any)=> {
+          console.log(error)
+      },
+      complete:()=> {
+            this.loadAllProducts();
+      }
+
+    });
+
+    this.productForm.reset();
+
+  }
+
 }

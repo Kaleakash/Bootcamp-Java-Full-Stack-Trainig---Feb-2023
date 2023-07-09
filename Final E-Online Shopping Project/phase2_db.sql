@@ -38,12 +38,13 @@ create table users(
 		password varchar(30),
 		img blob,
 		contact bigint,
-        street varchar(30),
+	        street varchar(30),
 		city varchar(30),
 		state varchar(30),
 		country varchar(30),
 		pincode bigint
 );
+
 select * from product;
 
 select * from users;
