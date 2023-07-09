@@ -31,6 +31,10 @@ export class CategoryService {
     return this.httpClient.post<Category[]>(this.baseUrl+"/search",{categoryName:categoryNameValue});
   }
 
+  updateCategory(category:any){
+    return this.httpClient.put(this.baseUrl+"/update",category,{responseType:'text'});
+
+  }
 }
 
 

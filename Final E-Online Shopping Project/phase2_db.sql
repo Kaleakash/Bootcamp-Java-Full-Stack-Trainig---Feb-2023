@@ -11,7 +11,7 @@ insert into admin values('admin@gmail.com','admin@123');
 create table category(cid int primary key auto_increment, 
 categoryName varchar(50), 
 categoryDescription varchar(250),
-categoryImageUrl blob); 
+categoryImageUrl longblob); 
 
 alter table category modify categoryImageUrl longblob;
 alter table category modify categoryDescription varchar(500);
@@ -28,7 +28,7 @@ rating float,
 stock int,
 brand varchar(30),
 cid int, 
-thumbnail blob, foreign key(cid) references category(cid));
+thumbnail longblob, foreign key(cid) references category(cid));
 
 
 create table users(

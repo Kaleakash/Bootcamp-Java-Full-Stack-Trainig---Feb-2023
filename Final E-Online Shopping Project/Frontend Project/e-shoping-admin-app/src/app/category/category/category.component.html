@@ -15,6 +15,7 @@
                 <th>Category Description</th>
                 <th>Image URL</th>
                 <th>Delete Category</th> 
+                <th>Update Category</th>
             </tr>
             <tr *ngFor="let category of categories;let i=index;">
                   <td>{{i+1}}</td>
@@ -22,6 +23,7 @@
                   <td>{{category.categoryDescription}}</td>
                   <td><img src={{category.categoryImageUrl}} width="50px" height="50px"/></td> 
                   <td><input type="button" value="delete rec" (click)="deleteCategory(category.cid)" class="btn btn-info"/></td>
+                  <td><input type="button" value="update rec" (click)="updateCategory(category,updateCategoryModal)" class="btn btn-info"/></td>
             </tr>
         </table>
 
@@ -70,4 +72,52 @@
             </div>
            
     </ng-template>
+
+
+    <ng-template #updateCategoryModal let-modal class="modal-dialog">
+      <div class="model-header">
+              <h2>Update Category Details</h2>
+      </div>
+      <div class="model-body">
+          <form [formGroup]="categoryForm" (ngSubmit)="updateCategoryFromDb()">
+              <div class="row">
+                    <div class="col-3">
+                         <label>Category Name</label>
+                    </div>
+                    <div class="col-3">
+                      <input type="text" formControlName="categoryName"/>
+                    </div>  
+              </div>  
+              <div class="row">
+                  <div class="col-3">
+                       <label>Category Description</label>
+                  </div>
+                  <div class="col-3">
+                    <input type="text" formControlName="categoryDescription"/>
+                  </div>  
+            </div>  
+            <div class="row">
+              <div class="col-3">
+                   <label>Category Image URL</label>
+              </div>
+              <div class="col-3">
+                <input type="text" formControlName="categoryImageUrl"/>
+              </div>  
+           </div>  
+
+           <div class="row">
+              <div class="col-3">
+               <input type="submit" value="Upate Category" class="btn btn-outline-primary"/>
+              </div>
+              <div class="col-3">
+                  <input type="button" value="Close" (click)="modal.close('close')" class="btn btn-outline-dark"/>
+              </div>  
+           </div>
+
+          </form>
+          
+      </div>
+     
+</ng-template>
+
 </div>

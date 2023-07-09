@@ -21,5 +21,18 @@ alter table category modify categoryDescription varchar(500);
 delete from category where cid=2;
 select * from category;
 
+-- Product table 
+
+create table product(
+pid int primary key auto_increment,
+title varchar(30), 
+description varchar(250),
+price float,
+discountPercentage float,
+rating float,
+stock int,
+brand varchar(30),
+cid int, 
+thumbnail longblob, foreign key(cid) references category(cid));
 
 

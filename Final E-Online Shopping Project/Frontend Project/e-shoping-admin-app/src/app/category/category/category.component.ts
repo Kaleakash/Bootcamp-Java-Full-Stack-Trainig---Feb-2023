@@ -18,17 +18,18 @@ export class CategoryComponent implements OnInit{
 
   ngOnInit(): void {
     this.categoryForm=this.formBuilder.group({
+      cid:[""],
       categoryName:[""],
       categoryDescription:[""],
       categoryImageUrl:[""]
     });
-
     this.loadCategories();
   }
   loadCategories() {
     this.categoryService.loadCategory().subscribe({
       next:(data:any)=> {
           this.categories=data;
+          console.log(this.categories)
       },
       error:(error:any)=> {
           console.log(error);
@@ -99,6 +100,33 @@ export class CategoryComponent implements OnInit{
       //   this.categories= result;
       // }
     
+  }
+
+  updateCategory(category:any,updateCategoryModal:any){
+    console.log(category);
+    this.categoryForm.patchValue({
+      cid:category.cid,
+      categoryName:category.categoryName,
+      categoryDescription:category.categoryDescription,
+      categoryImageUrl:category.categoryImageUrl      
+    })    
+    this.modal.open(updateCategoryModal,{size:'md'});
+  }
+  updateCategoryFromDb(){
+    console.log(this.categoryForm.value);
+    this.categoryService.updateCategory(this.categoryForm.value).subscribe({
+      next:(data:any)=> {
+          alert(data)
+      },
+      error:(error:any)=> {
+          console.log(error)
+      },
+      complete:()=> {
+          this.loadCategories();
+          console.log("done!")
+      }
+    })
+    this.categoryForm.reset();
   }
 }
 
