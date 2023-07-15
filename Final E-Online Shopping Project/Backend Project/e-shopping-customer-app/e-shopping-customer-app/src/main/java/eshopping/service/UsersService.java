@@ -1,5 +1,7 @@
 package eshopping.service;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,4 +49,14 @@ public class UsersService {
 			return "Invalid emailid";
 		}
 	}
+	
+	public List<Users> findAllUsers() {
+		System.out.println("Admin Micro Service client called service "+LocalDateTime.now());
+		return usersRepository.findAll();
+	}
+	
 }
+
+
+
+

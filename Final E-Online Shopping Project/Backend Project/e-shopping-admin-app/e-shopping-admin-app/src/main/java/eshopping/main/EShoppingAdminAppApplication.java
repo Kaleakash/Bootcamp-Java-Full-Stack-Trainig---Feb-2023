@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.client.RestTemplate;
 
 import eshopping.entity.Admin;
 import eshopping.repository.AdminRepository;
@@ -46,6 +48,12 @@ public class EShoppingAdminAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EShoppingAdminAppApplication.class, args);
 		System.out.println("Spring boot micro service for admin running on port number 8181");
+	}
+	
+	@Bean
+	@LoadBalanced					// same application ie admin can we run on different port number 9191,9292,9393,9494 scale up
+	public RestTemplate restTempalte() {
+		return new RestTemplate();
 	}
 
 }

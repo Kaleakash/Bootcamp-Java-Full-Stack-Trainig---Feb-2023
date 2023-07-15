@@ -7,8 +7,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
-  private baseSignUpUrl:string ="http://localhost:8080/phase2-backend-restapi/UsersSignUpController";
-  private baseSignInUrl:string ="http://localhost:8080/phase2-backend-restapi/UsersSignInController";
+  //private baseSignUpUrl:string ="http://localhost:8080/phase2-backend-restapi/UsersSignUpController";
+  //private baseSignInUrl:string ="http://localhost:8080/phase2-backend-restapi/UsersSignInController";
+  private baseSignUpUrl:string ="http://localhost:8282/phase3/customer/signUp";
+  private baseSignInUrl:string ="http://localhost:8282/phase3/customer/signIn";
+  
   constructor(public http:HttpClient) { }  
   get isLoggedIn():Observable<boolean>{
     return this.loggedIn.asObservable();

@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
-  public baseUrl:string ="http://localhost:3000/users";
+  //public baseUrl:string ="http://localhost:3000/users";
+  public baseUrl:string ="http://localhost:8181/phase3/admin/users/findAll";
   constructor(public httpClient:HttpClient) { }
 
   loadUserDetails():Observable<User[]> {
