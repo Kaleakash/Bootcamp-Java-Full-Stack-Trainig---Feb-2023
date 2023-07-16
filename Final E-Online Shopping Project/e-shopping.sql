@@ -63,5 +63,34 @@ create table users(
 		country varchar(30),
 		pincode bigint
 );
+select * from users;
 
 drop table users;
+
+
+delete from users;
+
+-- Account table 
+
+ create table account(
+ accno int primary key auto_increment, 
+ amount float, 
+ emailid varchar(30),
+ foreign key(emailid) references users(emailid)
+ );
+ 
+ select * from account;
+ drop table account;
+ 
+ create table orders(
+	orderid int primary key auto_increment, 
+	orderDate date,
+	orderStatus varchar(50),
+	email varchar(30),					
+	shipmentCharges int,
+	totalItems int, 
+	totalAmount float,
+foreign key(email) references users(emailid)
+);
+
+

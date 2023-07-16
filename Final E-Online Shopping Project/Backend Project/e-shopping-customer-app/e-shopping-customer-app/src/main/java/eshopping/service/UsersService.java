@@ -9,7 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-
+import eshopping.entity.Account;
 import eshopping.entity.Users;
 import eshopping.repository.UsersRepository;
 
@@ -24,13 +24,21 @@ public class UsersService {
 	@Autowired
 	UsersRepository usersRepository;
 	
+	@Autowired
+	AccountService accountService;
+	
 	public String signUp(Users  users) {
 		Optional<Users> result  = usersRepository.findById(users.getEmailid());
 		if(result.isPresent()) {
 			return "EmailId must be unique";
 		}else {
 			users.setPassword(password().encode(users.getPassword()));	// convert to hash
+			Account account = new Account();
+			account.setEmailid(users.getEmailid());
+			account.setAmount(1000);
+			
 			usersRepository.save(users);
+			accountService.createAccount(account);
 			return "Account created successfully";
 		}
 	}

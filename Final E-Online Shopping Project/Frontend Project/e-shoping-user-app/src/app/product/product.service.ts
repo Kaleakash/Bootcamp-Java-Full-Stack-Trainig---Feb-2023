@@ -9,7 +9,10 @@ export class ProductService {
 
   //private baseUrl:string ="http://localhost:3000/products";
 
-  private baseUrl:string ="http://localhost:8080/phase2-backend-restapi/ProductController";
+  //private baseUrl:string ="http://localhost:8080/phase2-backend-restapi/ProductController";
+
+  private baseUrl:string ="http://localhost:8282/phase3/customer/product/findAll";
+
 
   constructor(public httpClient:HttpClient) { }  // DI for HttpClient 
 

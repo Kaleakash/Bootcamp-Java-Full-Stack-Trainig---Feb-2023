@@ -17,13 +17,11 @@ export class SignupComponent implements OnInit{
     this.userRef=this.formBuilder.group({
       username:[],
       fullName:[],
-      address:this.formBuilder.group({
         street:[],
         city:[],
         state:[],
         country:[],
-        pincode:[]
-      }),
+        pincode:[],
       emailid:[],
       password:[],
       img:[],

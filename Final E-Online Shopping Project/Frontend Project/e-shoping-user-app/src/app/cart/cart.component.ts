@@ -89,6 +89,7 @@ export class CartComponent implements OnInit{
     console.log(orderDetails);
     this.orderService.orderPlaced(orderDetails).subscribe({
       next:(result:any)=> {
+        console.log(result);
             alert(result);
       },
       error:(error:any)=> {
