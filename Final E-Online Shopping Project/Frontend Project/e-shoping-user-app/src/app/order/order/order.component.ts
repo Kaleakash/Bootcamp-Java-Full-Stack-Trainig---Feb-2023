@@ -21,7 +21,7 @@ export class OrderComponent implements OnInit{
       console.log(this.user.emailid);
       this.os.viewOrdersByUser(this.user.emailid).subscribe({
         next:(result:any)=> {
-          //console.log(result)
+          console.log(result)
           this.orders=result;
         },
         error:(error:any)=> {

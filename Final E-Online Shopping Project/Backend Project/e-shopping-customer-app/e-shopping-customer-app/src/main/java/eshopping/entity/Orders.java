@@ -21,6 +21,9 @@ private int shipmentCharges;
 private int totalItems;
 @Column(name = "totalamount")
 private float totalAmount;
+
+
+
 public int getOrderid() {
 	return orderid;
 }
@@ -69,6 +72,7 @@ public String toString() {
 			+ email + ", shipmentCharges=" + shipmentCharges + ", totalItems=" + totalItems + ", totalAmount="
 			+ totalAmount + "]";
 }
+
 
 
 }

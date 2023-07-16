@@ -1,10 +1,20 @@
 <div>
     <table class="table">
         <tr>
-           <th>OrderId</th> 
+           <th>Order Id</th>
+           <th>Order Date</th>
+           <th>Order Status</th>
+           <th>Order Shilpment Chargest</th>
+           <th>Total Items</th>
+           <th>Total Amount</th>
         </tr>
         <tr *ngFor="let order of orders">
-            <td>{{order | json}}</td>
+            <td>{{order.orderid}}</td>
+            <td>{{order.orderDate}}</td>
+            <td>{{order.orderStatus}}</td>
+            <td>{{order.shipmentCharges}}</td>
+            <td>{{order.totalItems}}</td>
+            <td>{{order.totalAmount}}</td>
         </tr>
     </table>
 </div>

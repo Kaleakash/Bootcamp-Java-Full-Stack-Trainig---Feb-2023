@@ -18,6 +18,6 @@ export class OrderService {
   }
 
   viewOrdersByUser(email:any):Observable<any> {
-    return this.httpClient.get(this.baseUrl+"?email="+email);
+    return this.httpClient.get(this.baseUrl+"/viewOrderByUser?email="+email);
   }
 }

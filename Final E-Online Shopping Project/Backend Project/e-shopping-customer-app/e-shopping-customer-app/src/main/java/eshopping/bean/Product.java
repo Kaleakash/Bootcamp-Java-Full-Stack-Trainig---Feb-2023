@@ -10,7 +10,14 @@ public class Product {
 	private int stock;
 	private String brand;
 	private int cid;
-
+	private int qty;
+	
+	public int getQty() {
+		return qty;
+	}
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
 	public float getDiscountPercentage() {
 		return discountPercentage;
 	}
