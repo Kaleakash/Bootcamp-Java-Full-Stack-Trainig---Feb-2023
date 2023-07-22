@@ -1,18 +1,21 @@
 package eshopping.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Orders {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-//transient ignore that property 
 private int orderid;
 @Column(name = "orderdate")
 private LocalDate orderDate;
@@ -25,8 +28,6 @@ private int shipmentCharges;
 private int totalItems;
 @Column(name = "totalamount")
 private float totalAmount;
-
-
 
 public int getOrderid() {
 	return orderid;
@@ -76,6 +77,7 @@ public String toString() {
 			+ email + ", shipmentCharges=" + shipmentCharges + ", totalItems=" + totalItems + ", totalAmount="
 			+ totalAmount + "]";
 }
+
 
 
 

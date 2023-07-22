@@ -1,14 +1,13 @@
 package eshopping.bean;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.Column;
+import eshopping.entity.Product;
 
 public class OrdersInfo {
 	private int orderid;
-	private LocalDateTime orderDate;
+	private LocalDate orderDate;
 	private String orderStatus;
 	private String email;
 	private int shipmentCharges;
@@ -21,11 +20,10 @@ public class OrdersInfo {
 	public void setOrderid(int orderid) {
 		this.orderid = orderid;
 	}
-	
-	public LocalDateTime getOrderDate() {
+	public LocalDate getOrderDate() {
 		return orderDate;
 	}
-	public void setOrderDate(LocalDateTime orderDate) {
+	public void setOrderDate(LocalDate orderDate) {
 		this.orderDate = orderDate;
 	}
 	public String getOrderStatus() {

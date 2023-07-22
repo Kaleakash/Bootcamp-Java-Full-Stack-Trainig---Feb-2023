@@ -10,6 +10,7 @@ import { CartService } from 'src/app/cart/cart.service';
 })
 export class ProductComponent implements OnInit{
   products:Array<Product>=[];
+  searchData:any="";
   constructor(public productService:ProductService,public cartService:CartService){
 
   }
@@ -64,8 +65,26 @@ export class ProductComponent implements OnInit{
       product.qty=1;
       this.cartService.addDataInCart(product);
   }
-
+  wishListProduct:Array<Product>=[];
   addToWishlist(product:any){
-    console.log(product)
+    let obj = localStorage.getItem("wishlistproducts");
+    if(obj==null){
+      this.wishListProduct.push(product);
+      localStorage.setItem("wishlistproducts",JSON.stringify(this.wishListProduct));
+      
+    }else {
+      let tempInfo = localStorage.getItem("wishlistproducts");
+      if(tempInfo!=undefined){
+        let wishListProduct= JSON.parse(tempInfo);
+        wishListProduct.push(product);
+        localStorage.setItem("wishlistproducts",JSON.stringify(wishListProduct));
+      }
+      
+    }
+    let data = localStorage.getItem("wishlistproducts");
+    if(data!=undefined){
+      console.log(JSON.parse(data).length);
+    }
+    
   }
 }

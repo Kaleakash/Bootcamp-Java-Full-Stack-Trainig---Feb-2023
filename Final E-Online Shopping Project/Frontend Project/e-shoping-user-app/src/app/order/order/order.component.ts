@@ -8,7 +8,9 @@ import { OrderService } from '../order.service';
 })
 export class OrderComponent implements OnInit{
   user:any;
-  orders:Array<any>=[];
+  //orders:Array<any>=[];
+  orders?:Array<Array<any>>;
+  dateInfo:Date=new Date();
     constructor(public os:OrderService){
       
     }

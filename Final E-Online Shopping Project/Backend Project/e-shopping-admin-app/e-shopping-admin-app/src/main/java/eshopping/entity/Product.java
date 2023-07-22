@@ -20,7 +20,14 @@ private float rating;
 private int stock;
 private String brand;
 private int cid;
+private int qty;
 
+public int getQty() {
+	return qty;
+}
+public void setQty(int qty) {
+	this.qty = qty;
+}
 public float getDiscountPercentage() {
 	return discountPercentage;
 }
@@ -104,7 +111,7 @@ public Product(int pid, String title, String description, float discountPercenta
 public String toString() {
 	return "Product [pid=" + pid + ", title=" + title + ", description=" + description + ", discountPercentage="
 			+ discountPercentage + ", price=" + price + ", rating=" + rating + ", stock=" + stock + ", brand=" + brand
-			+ ", cid=" + cid + ", thumbnail=" + thumbnail + "]";
+			+ ", cid=" + cid + ", qty=" + qty + ", thumbnail=" + thumbnail + "]";
 }
 
 }

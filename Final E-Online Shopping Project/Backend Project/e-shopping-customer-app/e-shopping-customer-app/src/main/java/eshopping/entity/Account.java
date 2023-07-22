@@ -3,11 +3,14 @@ package eshopping.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.data.annotation.Transient;
+
 @Entity
 public class Account {
 @Id
 private int accno;
 private float amount;
+
 private String emailid;
 public int getAccno() {
 	return accno;

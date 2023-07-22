@@ -2,6 +2,7 @@ package eshopping.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import eshopping.entity.Account;
 import eshopping.repository.AccountRepository;
@@ -11,6 +12,7 @@ public class AccountService {
 
 	@Autowired
 	AccountRepository accountRepository;
+	
 	
 	public String createAccount(Account account) {
 		accountRepository.save(account);

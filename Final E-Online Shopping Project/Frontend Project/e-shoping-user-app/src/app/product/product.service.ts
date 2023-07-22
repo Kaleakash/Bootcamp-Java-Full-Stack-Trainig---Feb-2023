@@ -6,7 +6,7 @@ import { Product } from './product';
   providedIn: 'root'
 })
 export class ProductService {
-
+  
   //private baseUrl:string ="http://localhost:3000/products";
 
   //private baseUrl:string ="http://localhost:8080/phase2-backend-restapi/ProductController";

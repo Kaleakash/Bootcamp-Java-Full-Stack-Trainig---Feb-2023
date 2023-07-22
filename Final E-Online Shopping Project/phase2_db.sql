@@ -51,13 +51,13 @@ select * from users;
 
 
 create table orders(
-orderid int primary key auto_increment, 
-orderDate date,
-orderStatus varchar(50),
-email varchar(30),					
-shipmentCharges int,
-totalItems int, 
-totalAmount float,
+	orderid int primary key auto_increment, 
+	orderDate date,
+	orderStatus varchar(50),
+	email varchar(30),					
+	shipmentCharges int,
+	totalItems int, 
+	totalAmount float,
 foreign key(email) references users(emailid)
 );
 
@@ -103,6 +103,7 @@ drop procedure getProductName;
  emailid varchar(30),
  foreign key(emailid) references users(emailid)
  )
+
  insert into account(amount,emailid) values(2500,'john.snow@gmail.com');
  
  

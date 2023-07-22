@@ -15,9 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import eshopping.bean.OrdersInfo;
 import eshopping.entity.Orders;
 import eshopping.service.OrdersService;
-
 @RestController
-@RequestMapping("phase3/customer/orders")
+@RequestMapping("phase3/admin/orders")
 @CrossOrigin	
 public class OrdersController {
 
@@ -28,14 +27,17 @@ public class OrdersController {
 	public String placeOrder(@RequestBody OrdersInfo orderInfo) {
 		System.out.println(orderInfo);
 		//return "done";
-		return ordersService.placeOrcer(orderInfo);
+		return ordersService.placeOrder(orderInfo);
 	}
 	
 	@GetMapping(value = "viewOrderByUser",produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Object> viewOrdersByUser(@RequestParam("email") String emailid){
-		return ordersService.viewOrderByCustomer(emailid);
+		return ordersService.viewOrdersByUser(emailid);
 	}
 	
-	
-	
+
+	@GetMapping(value = "viewAllOrdersDetails",produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Object[]> getAllOrdersDetails() {
+		return ordersService.getAllOrdersInfo();
+	}
 }

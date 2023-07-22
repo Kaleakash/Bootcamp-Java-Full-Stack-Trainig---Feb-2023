@@ -1,20 +1,15 @@
 <div>
+    Your Date Details {{dateInfo}}<br/>
+    Your Date Details {{dateInfo | date}}<br/>
+    
     <table class="table">
         <tr>
-           <th>Order Id</th>
-           <th>Order Date</th>
-           <th>Order Status</th>
-           <th>Order Shilpment Chargest</th>
-           <th>Total Items</th>
-           <th>Total Amount</th>
+           <th>Order Details</th>
         </tr>
-        <tr *ngFor="let order of orders">
-            <td>{{order.orderid}}</td>
-            <td>{{order.orderDate}}</td>
-            <td>{{order.orderStatus}}</td>
-            <td>{{order.shipmentCharges}}</td>
-            <td>{{order.totalItems}}</td>
-            <td>{{order.totalAmount}}</td>
+        <tr *ngFor="let order of orders;let i=index;">
+          <div *ngFor="let o of order">
+               <tr><td> {{o}}</td></tr>
+          </div>
         </tr>
     </table>
 </div>
