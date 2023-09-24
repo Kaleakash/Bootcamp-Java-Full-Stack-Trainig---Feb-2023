@@ -1,0 +1,44 @@
+<form [formGroup]="loginRef" (ngSubmit)="signUp()">
+    <div class="container">   
+        <div class="row">
+            <div class="col-2">
+                <label>EmailId</label>
+            </div>
+            <div class="col-2">
+                <input type="email" class="form-control" formControlName="emailid"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label>Password</label>
+            </div>
+            <div class="col-2">
+                <input type="password" class="form-control" formControlName="password"/>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-2">
+                <label>TypeOfUser</label>
+            </div>
+            <div class="col-2">
+                <input type="radio" name="typeofuser" value="admin" formControlName="typeofuser"/>Admin
+                <input type="radio" name="typeofuser" value="customer" formControlName="typeofuser"/>Customer
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-2">
+               <input type="submit" value="SignUp" class="btn btn-success"/>
+            </div>
+            <div class="col-2">
+                <input type="reset" value="reset" class="btn btn-danger"/>
+            </div>
+        </div>
+        
+    </div>
+    <div>
+        <a routerLink="/login">Login</a>
+    </div>
+        <span style="color:red">{{msg}}</span>
+    </form>
