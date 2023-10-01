@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  mysql-container:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: eheathcare
+    ports:
+      - 3307:3306
+    restart: always
+  springboot-container:
+    build: ./backend/E-Health-care-backend/E-Health-care-backend/   
+    depends_on:
+      - mysql-container
+    ports:
+      - 9090:9090
+    restart: always
+  angular-container:
+    build: ./frontend/eheath-care-app/
+    ports:
+      - 80:80
+    

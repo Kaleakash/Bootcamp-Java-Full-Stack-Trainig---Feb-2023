@@ -1,0 +1,7 @@
+<div>
+    <h2>All Medicine Details</h2>
+    <span *ngFor="let mm of medicine">
+        <img src={{mm.imageurl}} width="200px" height="200px"/>
+        <span>Name :{{mm.mname}} Price : {{mm.price}}</span>
+    </span>
+</div>

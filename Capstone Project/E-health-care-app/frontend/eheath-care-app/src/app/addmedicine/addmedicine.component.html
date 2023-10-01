@@ -1,0 +1,18 @@
+<div>
+    <h2>Add Medicine</h2>
+    <form [formGroup]="medicineRef" (ngSubmit)="storeMedicine()">
+        <label>MName</label>
+        <input type="text" formControlName="mname"/><br/>
+        <label>Price</label>
+        <input type="number" formControlName="price"/><br/>
+        <label>Qty</label>
+        <input type="number" formControlName="qty"/><br/>
+        <label>ImageUrl</label>
+        <input type="url" formControlName="imageurl"/><br/>
+        <label>description</label>
+        <input type="text" formControlName="description"/><br/>
+        <input type="submit" value="Store Medicine Details"/>
+        <input type="reset" value="reset"/>
+    </form>
+    <span style="color:red">{{msg}}</span>
+</div>

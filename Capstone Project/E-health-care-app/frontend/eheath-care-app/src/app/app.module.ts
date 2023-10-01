@@ -9,13 +9,19 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { PropertyBindingComponent } from './property-binding/property-binding.component';
+import { AddmedicineComponent } from './addmedicine/addmedicine.component';
+import { ViewmedicineComponent } from './viewmedicine/viewmedicine.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     AdmindashboardComponent,
-    CustomerdashboardComponent
+    CustomerdashboardComponent,
+    PropertyBindingComponent,
+    AddmedicineComponent,
+    ViewmedicineComponent
   ],
   imports: [
     BrowserModule,

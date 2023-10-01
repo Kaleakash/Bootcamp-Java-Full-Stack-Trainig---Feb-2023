@@ -1,7 +1,10 @@
 <div>
-    <h2>Welcome to Admin Home Page</h2>
-
-
-    <input type="button" value="logout"
-    (click)="logout()" class="btn btn-info"/>
+    <h2>Welcome to Admin Home Page <input type="button" value="logout"
+        (click)="logout()" class="btn btn-info"/>
+    
+    </h2>
+    <a routerLink="addMedicine">Add Medicine</a>
+    <hr/>
+    <router-outlet></router-outlet>
+    
 </div>

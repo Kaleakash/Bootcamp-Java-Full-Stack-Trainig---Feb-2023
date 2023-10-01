@@ -4,16 +4,17 @@ import { LoginComponent } from './login/login.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { CustomerdashboardComponent } from './customerdashboard/customerdashboard.component';
 import { SignupComponent } from './signup/signup.component';
+import { AddmedicineComponent } from './addmedicine/addmedicine.component';
+import { ViewmedicineComponent } from './viewmedicine/viewmedicine.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"SignUp",component:SignupComponent},
   {path:"adminhome",component:AdmindashboardComponent,children:[
-    {path:"addMedicine"}
-  
+    {path:"addMedicine",component:AddmedicineComponent}
   ]},
   {path:"customerhome",component:CustomerdashboardComponent,children:[
-    {path:"viewMedicine"}
+    {path:"viewMedicine",component:ViewmedicineComponent}
   ]},
 
   {path:"login",component:LoginComponent}
